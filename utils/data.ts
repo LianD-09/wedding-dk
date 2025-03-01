@@ -1,5 +1,7 @@
 import { PartyItemProps } from '@/types/props.types';
 import { StaticImageData } from 'next/image';
+import groomQR from '@/public/groom_qr.jpeg';
+import brideQR from '@/public/bride_qr.jpeg';
 export const links = [
   {
     name: 'Giới thiệu',
@@ -45,7 +47,7 @@ export const storyLine = [
     description: `Love`,
     year: '09 - 2018',
     image: {
-      src: '',
+      src: 'https://i.imgur.com/Z7eFICZ.jpg',
       width: 5120,
       height: 5120,
     } as StaticImageData,
@@ -68,7 +70,7 @@ export const couple = {
   bride: {
     name: 'Ngọc Khánh',
     image: {
-      src: '',
+      src: 'https://i.imgur.com/Z7eFICZ.jpg',
       width: 3072,
       height: 4319,
     } as StaticImageData,
@@ -97,14 +99,14 @@ export const banks = [
     bankName: '',
     cardNumber: '',
     cardHolder: 'MAI TIEN DUNG',
-    image: '',
+    image: groomQR,
     type: 'GROOM',
   },
   {
     bankName: '',
     cardNumber: 'DO HOANG NGOC KHANH',
     cardHolder: '',
-    image: '',
+    image: brideQR,
     type: 'BRIDE',
   },
 ];

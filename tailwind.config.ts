@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
+import { playfair } from './app/fonts';
 
 const config: Config = {
   content: [
@@ -18,6 +19,10 @@ const config: Config = {
       fhd: '1700px',
     },
     extend: {
+      fontFamily: {
+        playfair: ['var(--font-playfair)'],
+        segoe: ['var(--font-segoe)'],
+      },
       animation: {
         'slide-in-right': 'slideInRight 0.5s ease-in-out',
         'slide-in-left': 'slideInLeft 1s ease-in-out',
@@ -28,7 +33,10 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        black: '#000000',
+        overlay: '#000000',
+        black: '#2b2a2a',
+        cararra: '#e8e8e3',
+        grey: '#777676',
         white: '#ffffff',
         description: '#6e6f6f',
       },

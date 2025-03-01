@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
 import { useActiveSectionContext } from '@/context/active-section-context';
+
+import { useInView } from 'react-intersection-observer';
+import { SectionName } from '@/types/common.types';
+
 type useSectionInViewProps = {
   sectionName: SectionName;
   thresholdInView?: number;
 };
-import { useInView } from 'react-intersection-observer';
-import { SectionName } from '../services/types';
+
 export function useSectionInView({
   sectionName,
   thresholdInView,
