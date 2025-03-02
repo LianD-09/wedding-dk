@@ -92,7 +92,7 @@ export const events = [
   },
 ] as const;
 
-export const slides = [albumUrls[25], albumUrls[14], albumUrls[0]];
+export const slides = [albumUrls[0], albumUrls[0], albumUrls[0]];
 
 export const banks = [
   {

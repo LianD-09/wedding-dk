@@ -22,6 +22,7 @@ const config: Config = {
       fontFamily: {
         playfair: ['var(--font-playfair)'],
         segoe: ['var(--font-segoe)'],
+        windsong: ['var(--font-windsong)'],
       },
       animation: {
         'slide-in-right': 'slideInRight 0.5s ease-in-out',
@@ -65,19 +66,20 @@ const config: Config = {
           textAlign: 'center',
           fontSize: theme('fontSize.5xl'),
           lineHeight: theme('lineHeight.5xl'),
-          color: theme('colors.title'),
+          color: theme('colors.black'),
+          fontFamily: theme('fontFamily.playfair'),
         },
         h2: {
           textAlign: 'center',
           fontSize: theme('fontSize.3xl'),
           lineHeight: theme('lineHeight.3xl'),
-          color: theme('colors.title'),
+          color: theme('colors.black'),
         },
         h3: {
           textAlign: 'center',
           fontSize: theme('fontSize.2xl'),
           lineHeight: theme('lineHeight.2xl'),
-          color: theme('colors.title'),
+          color: theme('colors.black'),
         },
       });
     }),

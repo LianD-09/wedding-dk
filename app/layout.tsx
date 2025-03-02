@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import { playfair, segoe } from "./fonts";
+import { playfair, segoe, windSong } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Dung & Khanh wedding",
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${segoe.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${segoe.variable} ${playfair.variable} ${windSong.variable}`}>
       <body
         className={`${segoe.className} antialiased bg-white`}
       >

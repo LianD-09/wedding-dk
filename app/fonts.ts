@@ -1,11 +1,18 @@
 import localFont from 'next/font/local';
 
-import { Playfair_Display } from 'next/font/google';
+import { Playfair_Display, WindSong } from 'next/font/google';
 
 export const playfair = Playfair_Display({
   subsets: ['latin'],
   preload: true,
   variable: '--font-playfair',
+});
+
+export const windSong = WindSong({
+  subsets: ['latin'],
+  preload: true,
+  variable: '--font-windsong',
+  weight: ['400', '500']
 });
 
 export const segoe = localFont({
