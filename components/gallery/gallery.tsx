@@ -3,7 +3,6 @@ import React from 'react';
 import { useSectionInView } from '@/hooks/hooks';
 import { albumUrls } from '@/utils/data';
 import { SectionHeadingImage } from '@/layout/section-heading';
-import Typography from '@/libs/Typography';
 import ImageGrid from './image-grid';
 
 export default function Gallery() {

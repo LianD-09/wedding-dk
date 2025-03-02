@@ -6,3 +6,8 @@ export type PartyItemProps = {
   address: string;
   location: string;
 };
+
+export interface ShapeProps {
+  className?: string;
+  children?: React.ReactNode;
+}

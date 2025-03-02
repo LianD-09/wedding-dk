@@ -1,6 +1,5 @@
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
-import { playfair } from './app/fonts';
 
 const config: Config = {
   content: [
@@ -39,6 +38,7 @@ const config: Config = {
         cararra: '#e8e8e3',
         grey: '#777676',
         white: '#ffffff',
+        tamarillo: '#a51212',
         description: '#6e6f6f',
       },
       keyframes: {
@@ -56,6 +56,17 @@ const config: Config = {
           '75%': { transform: 'scale(1.0) rotate(13deg)' },
           '100%': { transform: 'scale(.8) rotate(0)' },
         },
+        scaleUp: {
+          '0%': { transform: 'scale(1.0)' },
+          '25%': { transform: 'scale(1.1)' },
+          '50%': { transform: 'scale(1.2)' },
+          '75%': { transform: 'scale(1.3)' },
+          '100%': { transform: 'scale(1.4)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        }
       },
     },
   },

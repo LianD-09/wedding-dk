@@ -8,17 +8,17 @@ type Props = {
 }
 
 const ImageSlider = ({ src, current }: Props) => {
-  const [fade, setFade] = useState(true);
+  const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    setFade(false); // Start fading out
-    const timeout = setTimeout(() => setFade(true), 1000); // Fade in new image
+    setFade(true); // Start fading out
+    const timeout = setTimeout(() => setFade(false), 9000); // Fade in new image
     return () => clearTimeout(timeout);
   }, [current]);
 
   return (
     <div
-      className={`w-full flex transition-opacity duration-1000`}
+      className={`w-full flex transition-opacity duration-1000 overflow-hidden`}
       style={{ opacity: fade ? "1" : "0" }}
     >
       <Image
@@ -26,7 +26,7 @@ const ImageSlider = ({ src, current }: Props) => {
         src={src}
         alt=""
         priority
-        className="aspect-[2/1] h-full object-center object-cover pointer-events-none"
+        className="aspect-[2/1] h-full object-center object-cover pointer-events-none animate-[scaleUp_12s_linear_2s]"
       />
     </div>
   );

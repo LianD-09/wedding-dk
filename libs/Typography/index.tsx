@@ -4,13 +4,13 @@ type Variant = 'h1' | 'h2' | 'h3' | 'desc' | string;
 
 type Props = {
   className?: string;
-  variant: Variant;
+  variant?: Variant;
   children?: React.ReactNode;
 };
 
 export default function Typography({
   className = '',
-  variant,
+  variant = 'p',
   children,
   ...rest
 }: Props & React.HTMLAttributes<HTMLParagraphElement>) {
