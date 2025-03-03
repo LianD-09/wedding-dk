@@ -14,6 +14,10 @@
     "framer-motion": "^12.4.7",
     "google-auth-library": "^9.15.1",
     "google-spreadsheet": "^4.1.4",
+    "graphql": "^16.10.0",
+    "graphql-subscriptions": "^3.0.0",
+    "graphql-ws": "^6.0.4",
+    "graphql-yoga": "^5.12.2",
     "moment": "^2.30.1",
     "next": "15.1.7",
     "react": "^19.0.0",
@@ -21,13 +25,16 @@
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.15.1",
     "react-toastify": "^11.0.5",
-    "socket.io-client": "^4.8.1"
+    "socket.io-client": "^4.8.1",
+    "urql": "^4.2.1",
+    "ws": "^8.18.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/ws": "^8.5.14",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "postcss": "^8",

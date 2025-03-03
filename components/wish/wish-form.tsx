@@ -1,10 +1,20 @@
 import { Button } from '@/libs/Button';
 import Typography from '@/libs/Typography';
-import { useSocket } from '@/provider/socket-provider';
-import { WishData } from '@/services/types';
 import React, { FormEvent } from 'react';
 import { FaPaperPlane, FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { useMutation } from 'urql';
+
+const COMMENTS_MUTATION = `
+  mutation($author: String!, $message: String!) {
+    addComment(author: $author, message: $message) {
+      id
+      author
+      message
+      createdAt
+    }
+  }
+`;
 const originalIcon = (
   <FaPaperPlane
     className="text-xs opacity-80 transition-all 
@@ -19,26 +29,29 @@ const loadingIcon = (
 export default function WishForm() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
-  const { socket } = useSocket();
+  const [, addComment] = useMutation(COMMENTS_MUTATION);
   const submitForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
 
     try {
       const formData = new FormData(event.currentTarget);
-      const dataSubmit = Object.fromEntries(
-        formData.entries(),
-      ) as unknown as WishData;
-      socket.emit('addWish', dataSubmit);
+      const dataSubmit = Object.fromEntries(formData.entries()) as unknown as {
+        author: string;
+        message: string;
+      };
+      await addComment(dataSubmit);
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
       setIsSubmitted(!isSubmitted);
-      const guestNameEle = document.getElementById('name') as HTMLInputElement;
-      const wishEle = document.getElementById('wish') as HTMLInputElement;
-      guestNameEle.value = '';
-      wishEle.value = '';
+      const authorElement = document.getElementById('name') as HTMLInputElement;
+      const messageElement = document.getElementById(
+        'wish',
+      ) as HTMLInputElement;
+      authorElement.value = '';
+      messageElement.value = '';
       toast.success('Thanks for give us wishes!', {
         hideProgressBar: true,
         position: 'top-center',
@@ -46,7 +59,7 @@ export default function WishForm() {
       });
     }
   };
-  const hanldleChangeGuestNamePlaceholder = (placeholder: string) => {
+  const handleChangeGuestNamePlaceholder = (placeholder: string) => {
     const guestNameEle = document.getElementById('name') as HTMLInputElement;
     guestNameEle.placeholder = placeholder;
   };
@@ -69,18 +82,18 @@ export default function WishForm() {
       >
         <input
           type="text"
-          name="guestName"
+          name="author"
           id="name"
           className="md:h-[3.5rem] xs:h-[3rem] border-b-secondary px-3 bg-white focus:outline-none rounded-none"
           placeholder="Nhập họ tên *"
           onFocus={() =>
-            hanldleChangeGuestNamePlaceholder('VD: Thảo - Bạn thân cô dâu')
+            handleChangeGuestNamePlaceholder('VD: Thảo - Bạn thân cô dâu')
           }
-          onBlur={() => hanldleChangeGuestNamePlaceholder('Nhập họ tên *')}
+          onBlur={() => handleChangeGuestNamePlaceholder('Nhập họ tên *')}
           required
         />
         <textarea
-          name="content"
+          name="message"
           id="wish"
           className="md:h-[9rem] xs:h-[7rem] my-3 border-b-secondary p-3 bg-white focus:outline-none rounded-none"
           placeholder="Nhập lời chúc của bạn *"
