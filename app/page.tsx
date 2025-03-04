@@ -17,8 +17,8 @@ export default function Home() {
       <HeartFalling />
       <Intro />
       <CountdownTimer />
-      <Parties />
       <Gallery />
+      <Parties />
       <Wishes />
       <Congrats />
       <Gift />

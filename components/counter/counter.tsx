@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import TimeBox from './time-box';
-import { SectionHeadingImage } from '@/layout/section-heading';
+import { SectionHeading } from '@/layout/section-heading';
 import Typography from '@/libs/Typography';
 import Divider from '@/layout/divider';
 
@@ -12,7 +12,7 @@ export function CountdownTimer() {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const targetDate = new Date('2023-12-01T23:59:59');
+    const targetDate = new Date('2025-03-22T23:59:59');
     const interval = setInterval(() => {
       const now = new Date();
       let difference = targetDate.getTime() - now.getTime();
@@ -47,23 +47,29 @@ export function CountdownTimer() {
 
   return (
     <div
-      className="text-center sm:pt-10 w-full flex flex-col items-center 
-      before:absolute before:w-full before:h-full before:bg-auto before:bg-[url('/white-flower.png')] before:bg-center before:bg-no-repeat before:opacity-70"
+      className="relative text-center h-screen
+      w-full flex flex-col items-center justify-between bg-black
+      transition-all ease-in-out duration-1000
+      before:absolute before:w-full before:h-full 
+      before:bg-cover
+      before:bg-[url('https://i.imgur.com/qZSXtdf.jpg')] 
+      before:bg-[center_top_0rem] before:opacity-30
+      before:bg-fixed"
     >
-      <SectionHeadingImage className="mt-10 !mb-0 z-50">
-        Save the date
-      </SectionHeadingImage>
+      <SectionHeading className="mt-40 !mb-0 z-50 !text-white md:!text-8xl !font-semibold">
+        SAVE THE DATE
+      </SectionHeading>
       <div className="flex justify-center items-center gap-4 min-h-[3rem] z-50">
-        <Divider className="md:h-[3px] xs:h-[2px] md:w-15 xs:w-10 !bg-cs-green-900" />
+        <Divider className="md:h-[2px] xs:h-[1px] md:w-40 xs:w-10" />
         <Typography
           variant="h3"
-          className="font-normal text-cs-green-900 xs:!text-2xl md:!text-3xl italic"
+          className="font-normal text-white xs:!text-2xl md:!text-3xl"
         >
-          02/12/2023
+          02 . 12 . 2023
         </Typography>
-        <Divider className="md:h-[3px] xs:h-[2px] md:w-15 xs:w-10 !bg-cs-green-900" />
+        <Divider className="md:h-[2px] xs:h-[1px] md:w-40 xs:w-10" />
       </div>
-      <div className="grid md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 gap-6 w-fit z-50">
+      <div className="grid md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 gap-6 w-fit z-50 mb-40">
         <TimeBox time={getStringTime(days)} title="Ngày" />
         <TimeBox time={getStringTime(hours)} title="Giờ" />
         <TimeBox time={getStringTime(minutes)} title="Phút" />
