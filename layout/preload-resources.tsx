@@ -1,0 +1,18 @@
+'use client ';
+
+import ReactDOM from 'react-dom';
+
+// preload images
+export function PreloadResources() {
+  ReactDOM.preload('/std-bg.jpg', {
+    as: 'image',
+    fetchPriority: 'high',
+  });
+
+  ReactDOM.preload('/images/HR302900.jpg', {
+    as: 'image',
+    fetchPriority: 'auto',
+  });
+
+  return null;
+}

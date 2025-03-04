@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { BsX } from 'react-icons/bs';
 import Typography from '../Typography';
 import { motion } from 'framer-motion';
@@ -11,6 +11,7 @@ type ModalProps = {
   classNameChildren?: string;
   classNameTitle?: string;
   classNameHeader?: string;
+  onKeyDown?: (e: KeyboardEvent) => void;
 };
 
 export default function Modal({
@@ -22,14 +23,26 @@ export default function Modal({
   classNameTitle = '',
   classNameHeader = '',
   title,
+  onKeyDown
 }: ModalProps) {
+
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      onKeyDown && onKeyDown(event);
+    };
+
+    open && window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [open]);
+
   if (!open) return null;
   return (
     <motion.div
+      autoFocus={open}
       className={`fixed z-[999] inset-0 flex items-center justify-center ${className}`}
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25, delay: 0.125, type: 'spring' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.125, type: 'spring' }}
     >
       <div
         className="fixed inset-0 bg-black opacity-50"
@@ -47,19 +60,17 @@ export default function Modal({
           )}
           <button
             onClick={onClose}
-            className={`absolute right-2 top-2 rounded-full  ${
-              title
-                ? 'bg-none text-white hover:bg-gray-100 hover:text-black'
-                : 'bg-white text-black hover:bg-gray-300'
-            }`}
+            className={`absolute right-2 top-2 rounded-full  ${title
+              ? 'bg-none text-white hover:bg-gray-100 hover:text-black'
+              : 'bg-white text-black hover:bg-gray-300'
+              }`}
           >
             <BsX className="h-6 w-6" />
           </button>
         </div>
         <div
-          className={`md:px-16 xs:px-4 md:py-10 pb-5 ${
-            title ? 'xs:pt-2' : 'xs:pt-7'
-          } ${classNameChildren}`}
+          className={`md:px-16 xs:px-4 md:py-10 pb-5 ${title ? 'xs:pt-2' : 'xs:pt-7'
+            } ${classNameChildren}`}
         >
           {children}
         </div>

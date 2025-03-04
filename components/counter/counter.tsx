@@ -4,6 +4,7 @@ import TimeBox from './time-box';
 import { SectionHeading } from '@/layout/section-heading';
 import Typography from '@/libs/Typography';
 import Divider from '@/layout/divider';
+import Image from 'next/image';
 
 export function CountdownTimer() {
   const [days, setDays] = useState(0);
@@ -49,14 +50,19 @@ export function CountdownTimer() {
     <div
       className="relative text-center h-screen
       w-full flex flex-col items-center justify-between bg-black
-      transition-all ease-in-out duration-1000
-      before:absolute before:w-full before:h-full 
-      before:bg-cover
-      before:bg-[url('https://i.imgur.com/qZSXtdf.jpg')] 
-      before:bg-[center_top_0rem] before:opacity-30
-      before:bg-fixed"
+      transition-all ease-in-out duration-1000"
+      style={{ clipPath: 'inset(0 0 0 0)' }} // Make the background outside invisible
     >
-      <SectionHeading className="mt-40 !mb-0 z-50 !text-white md:!text-8xl !font-semibold">
+      <Image
+        src="/std-bg.jpg"
+        height={2160}
+        width={3238}
+        alt="background"
+        objectFit="cover"
+        className="fixed top-0 left-0 right-0 -z-10 opacity-30"
+        priority
+      />
+      <SectionHeading className="mt-24 md:mt-40 !mb-0 z-50 !text-white md:!text-8xl !font-bold">
         SAVE THE DATE
       </SectionHeading>
       <div className="flex justify-center items-center gap-4 min-h-[3rem] z-50">
@@ -65,11 +71,11 @@ export function CountdownTimer() {
           variant="h3"
           className="font-normal text-white xs:!text-2xl md:!text-3xl"
         >
-          02 . 12 . 2023
+          22 . 03 . 2025
         </Typography>
         <Divider className="md:h-[2px] xs:h-[1px] md:w-40 xs:w-10" />
       </div>
-      <div className="grid md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 gap-6 w-fit z-50 mb-40">
+      <div className="grid md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 gap-6 w-fit z-50 mb-24 md:mb-40">
         <TimeBox time={getStringTime(days)} title="Ngày" />
         <TimeBox time={getStringTime(hours)} title="Giờ" />
         <TimeBox time={getStringTime(minutes)} title="Phút" />

@@ -4,6 +4,7 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { playfair, segoe, windSong } from "./fonts";
+import { PreloadResources } from "@/layout/preload-resources";
 
 export const metadata: Metadata = {
   title: "Dung & Khanh wedding",
@@ -17,8 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${segoe.variable} ${playfair.variable} ${windSong.variable}`}>
+      <PreloadResources />
       <body
-        className={`${segoe.className} antialiased bg-white`}
+        className={`${segoe.className} antialiased bg-white overflow-x-hidden scroll-smooth`}
       >
         <ActiveSectionContextProvider>
           <Header />

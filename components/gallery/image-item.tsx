@@ -37,11 +37,11 @@ export default function ImageItem({ imgProps, alt }: ImageItemProps) {
         open={isModalOpen}
         classNameChildren="!px-0 xs:!p-2 md:!p-2"
         classNameHeader="!absolute !-top-5 !-right-5 !h-6 !w-6 !z-50"
+        onKeyDown={(e) => e.key === 'Escape' && closeModal()}
       >
         <div
-          className={`flex relative justify-center items-center p-0 w-[21rem] ${
-            imgProps.width > imgProps.height ? 'md:w-[40rem]' : 'md:w-[30rem]'
-          } `}
+          className={`flex relative justify-center items-center p-0 w-[21rem] ${imgProps.width > imgProps.height ? 'md:w-[40rem]' : 'md:w-[30rem]'
+            } `}
         >
           <Image
             src={imgProps}
