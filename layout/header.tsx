@@ -22,7 +22,7 @@ export default function Header() {
         <>
           <button
             onClick={() => setOpenDrawer(true)}
-            className="fixed flex top-[1.5rem] text-white hover:bg-cs-green-700 right-[1rem] p-2 rounded-full w-[2.5rem] h-[2.5rem] bg-cs-green-900 justify-center items-center"
+            className="fixed flex top-[1.5rem] text-white hover:bg-tamarillo bg-khaki bg-opacity-70 right-[1rem] p-2 w-[2.5rem] h-[2.5rem] bg-cs-green-900 justify-center items-center"
           >
             <RiMenuLine className="text-xl opacity-80 transition-all" />
           </button>
@@ -78,8 +78,8 @@ export default function Header() {
       ) : (
         <>
           <motion.div
-            className="fixed top-0 left-1/2 -translate-x-1/2 h-12 xl:w-[54%] xlm:w-[48%] md:w-3/4 lg:w-[66%] lgm:w-[60%] rounded-none 
-            border border-white border-opacity-30 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:rounded-full"
+            className="fixed top-0 left-1/2 -translate-x-1/2 h-12 xl:w-[55%] xlm:w-[48%] md:w-3/4 lg:w-[66%] lgm:w-[60%] rounded-none 
+            border border-white border-opacity-30 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6"
             initial={{ y: -100, x: '-50%', opacity: 0 }}
             animate={{ y: 0, x: '-50%', opacity: 1 }}
           >
@@ -90,17 +90,14 @@ export default function Header() {
               >
                 {links.map((link, index) => (
                   <motion.li
-                    className="h-3/4 flex items-center justify-center relative"
+                    className={`h-3/4 flex items-center justify-center relative`}
                     key={index}
                     initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
                     <Link
                       className={clsx(
-                        'flex w-full items-center justify-center px-4 py-3 hover:text-title transition',
-                        {
-                          'text-title': activeSection === link.name,
-                        },
+                        'flex w-full items-center justify-center px-4 py-3 hover:text-tamarillo',
                       )}
                       href={link.hash}
                       onClick={() => {
@@ -108,17 +105,19 @@ export default function Header() {
                         setTimeOfLastClick(Date.now());
                       }}
                     >
-                      {link.name}
+                      <text className={`${activeSection === link.name ? 'invisible' : ''}`}>{link.name}</text>
                       {link.name === activeSection && (
                         <motion.span
-                          className="bg-cs-green-300 rounded-full absolute inset-0 -z-10"
+                          className="bg-khaki absolute inset-0 -z-10 flex justify-center items-center font-bold text-white"
                           layoutId="activeSection"
+                          initial={{ height: 0 }}
+                          animate={{ height: 80 }}
                           transition={{
-                            type: 'spring',
-                            stiffness: 380,
-                            damping: 30,
+                            duration: 0.5
                           }}
-                        ></motion.span>
+                        >
+                          {link.name}
+                        </motion.span>
                       )}
                     </Link>
                   </motion.li>

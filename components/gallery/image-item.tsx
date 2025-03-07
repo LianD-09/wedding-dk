@@ -4,9 +4,10 @@ import React from 'react';
 
 type ImageItemProps = {
   imgProps: StaticImageData;
+  horizontal?: boolean;
   alt: string;
 };
-export default function ImageItem({ imgProps, alt }: ImageItemProps) {
+export default function ImageItem({ imgProps, alt, horizontal }: ImageItemProps) {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   // modal wedding gift
@@ -18,7 +19,7 @@ export default function ImageItem({ imgProps, alt }: ImageItemProps) {
     setIsModalOpen(false);
   };
   return (
-    <div className="flex justify-center items-start">
+    <div className="flex justify-center items-start h-full">
       <Image
         src={{
           src: imgProps.src,
@@ -28,8 +29,9 @@ export default function ImageItem({ imgProps, alt }: ImageItemProps) {
         alt={alt}
         onClick={openModal}
         priority
-        className="h-full w-full rounded-sm shadow-2xl transition
-  hover:cursor-pointer bg-transparent"
+        className={`h-full w-full rounded-sm shadow-2xl 
+        hover:cursor-pointer bg-transparent ${horizontal ? `md:border-[24px]` : `md:border-[24px]`} border-[12px] border-black
+        z-10 object-center object-cover transition-all ease-in-out duration-1000`}
       />
 
       <Modal
@@ -40,14 +42,14 @@ export default function ImageItem({ imgProps, alt }: ImageItemProps) {
         onKeyDown={(e) => e.key === 'Escape' && closeModal()}
       >
         <div
-          className={`flex relative justify-center items-center p-0 w-[21rem] ${imgProps.width > imgProps.height ? 'md:w-[40rem]' : 'md:w-[30rem]'
-            } `}
+          className={`flex relative justify-center items-center p-0 
+            ${imgProps.width > imgProps.height ? 'w-[70vw]' : 'h-[90vh]'}`}
         >
           <Image
             src={imgProps}
             alt={alt}
             priority
-            className="object-contain object-center rounded-lg"
+            className="object-contain object-center rounded-lg w-full h-full"
           />
         </div>
       </Modal>

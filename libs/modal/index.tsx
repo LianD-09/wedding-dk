@@ -1,7 +1,8 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, use, useEffect } from 'react';
 import { BsX } from 'react-icons/bs';
 import Typography from '../Typography';
 import { motion } from 'framer-motion';
+import { useWindowSize } from '@/hooks/useWindowSize';
 type ModalProps = {
   open: boolean;
   onClose: () => void;
@@ -25,7 +26,7 @@ export default function Modal({
   title,
   onKeyDown
 }: ModalProps) {
-
+  const { isBelowSm } = useWindowSize();
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       onKeyDown && onKeyDown(event);
@@ -34,6 +35,12 @@ export default function Modal({
     open && window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [open]);
+
+  useEffect(() => {
+    if (open) {
+      onClose();
+    }
+  }, [isBelowSm]);
 
   if (!open) return null;
   return (

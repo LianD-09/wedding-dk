@@ -18,7 +18,7 @@ export default function Intro() {
     >
       <div className='relative w-full h-full flex flex-col md:gap-10 gap-5 md:py-40 py-16 bg-black'>
         <Typography variant='h1' className='md:!text-8xl italic !font-semibold text-white'>WEDDING</Typography>
-        <div className='w-full h-full flex flex-row justify-center items-center md:gap-40 gap-20'>
+        <div className='w-full h-full flex flex-row justify-center items-center md:gap-40 gap-16'>
           <Typography variant='h1' className='md:!text-9xl !text-6xl !font-extrabold text-white'>D</Typography>
           <div className='md:h-32 h-16 border-l-2 border-white' />
           <Typography variant='h1' className='md:!text-9xl !text-6xl !font-extrabold text-white'>K</Typography>

@@ -13,7 +13,7 @@ export function CountdownTimer() {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const targetDate = new Date('2025-03-22T23:59:59');
+    const targetDate = new Date('2025-03-23T23:59:59');
     const interval = setInterval(() => {
       const now = new Date();
       let difference = targetDate.getTime() - now.getTime();
@@ -58,8 +58,7 @@ export function CountdownTimer() {
         height={2160}
         width={3238}
         alt="background"
-        objectFit="cover"
-        className="fixed top-0 left-0 right-0 -z-10 opacity-30"
+        className={`fixed top-0 left-0 right-0 -z-10 opacity-30 h-full w-full object-cover transition-all ease-in-out duration-1000`}
         priority
       />
       <SectionHeading className="mt-24 md:mt-40 !mb-0 z-50 !text-white md:!text-8xl !font-bold">
@@ -71,7 +70,7 @@ export function CountdownTimer() {
           variant="h3"
           className="font-normal text-white xs:!text-2xl md:!text-3xl"
         >
-          22 . 03 . 2025
+          23 . 03 . 2025
         </Typography>
         <Divider className="md:h-[2px] xs:h-[1px] md:w-40 xs:w-10" />
       </div>

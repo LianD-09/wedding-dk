@@ -52,22 +52,22 @@ export default function Footer() {
         `}
       >
         <div
-          className={`absolute rounded-full h-full aspect-square pointer-events-none ${isPause ? 'bg-red-300' : 'bg-green-300'
-            } animate-[borderTransform_1.5s_linear_infinite] z-[95] opacity-40`}
+          className={`absolute rounded-full h-full aspect-square pointer-events-none 
+            ${isPause ? 'bg-tamarillo' : 'bg-khaki'} animate-[borderTransform_1.5s_linear_infinite] 
+            z-[95] opacity-40`}
         ></div>
         <div
-          className={`flex relative justify-center items-center rounded-full z-[90]  flex-row-reverse overflow-x-hidden`}
+          className={`flex relative justify-center items-center rounded-full z-[90] flex-row-reverse overflow-x-hidden`}
         >
           {isVisible && (
             <Typography
               variant="desc"
-              className={`p-2.5 -ml-12 !font-semibold md:w-[17rem] md:pl-14 xs:w-[15rem] xs:pl-10
-          !text-black ${isClose ? 'animate-slide-in-left' : 'animate-slide-in-right'
+              className={`p-3 -ml-12 !font-semibold md:pl-14 w-auto xs:pl-14
+          !text-white ${isClose ? 'animate-slide-in-left' : 'animate-slide-in-right'
                 }
           bg-white
-          ${isPause ? 'border-red-600' : 'border-green-600'
-                } border-2 rounded-3xl
-          text-center justify-center items-center flex z-[10]
+          ${isPause ? 'bg-tamarillo' : 'bg-khaki'} rounded-3xl
+          text-center justify-center items-center flex z-[10] !text-sm
            `}
             >
               Bấm vào đây để phát nhạc!
@@ -84,21 +84,21 @@ export default function Footer() {
           ></audio>
 
           {isPause ? (
-            <div className="bg-red-600 text-[1.25rem] p-4 rounded-full z-[90]">
-              <BsVolumeMuteFill onClick={() => handleMouseClick(!isPause)} />
+            <div className="bg-tamarillo text-[1rem] p-4 rounded-full z-[90]" onClick={() => handleMouseClick(!isPause)} >
+              <BsVolumeMuteFill />
             </div>
           ) : (
-            <div className="bg-green-600 text-[1.25rem] p-4 rounded-full z-[90]">
-              <BsVolumeUpFill onClick={() => handleMouseClick(!isPause)} />
+            <div className="bg-khaki text-[1rem] p-4 rounded-full z-[90]" onClick={() => handleMouseClick(!isPause)}>
+              <BsVolumeUpFill />
             </div>
           )}
         </div>
         {isPause ? (
-          <div className="bg-red-600 text-[1.25rem] p-4 rounded-full z-[100] pointer-events-none absolute">
+          <div className="bg-tamarillo text-[1rem] p-4 rounded-full z-[100] pointer-events-none absolute">
             <BsVolumeMuteFill />
           </div>
         ) : (
-          <div className="bg-green-600 text-[1.25rem] p-4 rounded-full z-[100] pointer-events-none absolute">
+          <div className="bg-khaki text-[1rem] p-4 rounded-full z-[100] pointer-events-none absolute">
             <BsVolumeUpFill />
           </div>
         )}

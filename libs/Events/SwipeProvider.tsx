@@ -22,12 +22,12 @@ export const SwipeProvider = ({ children, onSwipeLeft, onSwipeRight, onSwipe, se
     const onTouchStart = (e: React.TouchEvent) => {
         duration.current.start = Date.now();
         touchEnd.current = 0; // otherwise the swipe is fired even with usual touch events
-        touchStart.current = e.targetTouches[0].clientX; 
+        touchStart.current = e.targetTouches[0].clientX;
     }
 
     const onTouchMove = (e: React.TouchEvent) => {
         console.log(e);
-        
+
         touchEnd.current = e.targetTouches[0].clientX;
         const distance = touchStart.current - touchEnd.current
         const distance_ = distance * (sensitivity / 1000);
@@ -52,7 +52,7 @@ export const SwipeProvider = ({ children, onSwipeLeft, onSwipeRight, onSwipe, se
     }
 
     return (
-        <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-full h-auto'>
+        <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-full h-full'>
             {children}
         </div>
     )

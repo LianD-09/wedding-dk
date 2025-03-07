@@ -36,6 +36,8 @@ const config: Config = {
         overlay: '#000000',
         black: '#2b2a2a',
         cararra: '#e8e8e3',
+        khaki: '#c4a484',
+        goldsand: '#e8c29b',
         grey: '#777676',
         white: '#ffffff',
         tamarillo: '#a51212',

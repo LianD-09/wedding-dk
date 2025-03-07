@@ -6,7 +6,7 @@ import Intro from '@/components/intro/intro';
 import HeartFalling from '@/components/main/heart-falling';
 import Parties from '@/components/party/parties';
 import Wishes from '@/components/wish/wishes';
-import Carousel from '@/libs/Slide/carousel';
+import Carousel from '@/libs/Slide/Carousel';
 import { slides } from '@/utils/data';
 import { ToastContainer } from 'react-toastify';
 

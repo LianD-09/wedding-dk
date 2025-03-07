@@ -18,7 +18,7 @@ const ImageSlider = ({ src, current }: Props) => {
 
   return (
     <div
-      className={`w-full flex transition-opacity duration-1000 overflow-hidden`}
+      className={`w-full h-full flex transition-opacity duration-1000 overflow-hidden`}
       style={{ opacity: fade ? "1" : "0" }}
     >
       <Image
@@ -26,7 +26,7 @@ const ImageSlider = ({ src, current }: Props) => {
         src={src}
         alt=""
         priority
-        className="aspect-[2/1] h-full object-center object-cover pointer-events-none animate-[scaleUp_12s_linear_2s]"
+        className="md:h-screen h-full md:object-[center_30%] object-cover pointer-events-none animate-[scaleUp_12s_linear_2s]"
       />
     </div>
   );

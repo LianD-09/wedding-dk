@@ -14,6 +14,7 @@ type ItemProps = {
   instagram: string;
   reverse?: boolean;
   title: string;
+  secondary?: boolean
 };
 
 export default function Item({
@@ -23,6 +24,7 @@ export default function Item({
   facebook,
   instagram,
   reverse,
+  secondary,
   title
 }: ItemProps) {
   const { isBelowMd } = useWindowSize();
@@ -41,7 +43,7 @@ export default function Item({
       }
       <div className={`w-full h-full flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} relative justify-center items-center md:items-start`}>
         <Image
-          className="xs:w-[50vh] xs:aspect-square md:w-[50vh] md:h-[75vh] md:border-[56px] border-[24px] border-black z-10 object-center object-cover transition-all ease-in-out duration-1000"
+          className={`xs:w-[50vh] xs:aspect-square md:w-[50vh] md:h-[75vh] md:border-[56px] border-[24px] ${secondary ? `border-goldsand` : `border-black`} z-10 object-center object-cover transition-all ease-in-out duration-1000`}
           src={image}
           priority
           alt=""
