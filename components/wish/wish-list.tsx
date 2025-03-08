@@ -1,40 +1,41 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import WishCard from './wish-card';
-import { WishData } from '@/services/types';
 import { FaSpinner } from 'react-icons/fa';
-import { useSocket } from '@/provider/socket-provider';
+import useSWR from 'swr';
+import { fetchComments } from '@/libs/api';
+import socket from '@/libs/ws-client';
 
 export default function WishList() {
-  const [listWishes, setListWishes] = useState<WishData[]>([]);
-  const { socket } = useSocket();
+  const { data: comments, mutate } = useSWR('comments', fetchComments);
+
   useEffect(() => {
-    if (socket) {
-      socket.on('newWish', (data: WishData) => {
-        setListWishes((prev) => [data, ...prev]);
-      });
-    } else {
-      const fetchWishes = async () => {
-        const res = await fetch('/api/comments');
-        const data = await res.json();
-        setListWishes(data?.data);
-      };
-      fetchWishes();
-    }
-  }, [socket]);
+    socket.on('NEW_COMMENT', (comment) => {
+      mutate([comment, ...comments]);
+    });
+
+    return () => {
+      socket.off('NEW_COMMENT');
+    };
+  }, [comments, mutate]);
   return (
     <div
       className={`flex bg-white flex-col md:mt-10 xs:mt-1 border-[3px] w-full
       border-secondary-cl rounded-md gap-2 md:h-[480px] xs:h-[400px] overflow-auto ${
-        listWishes?.length ? '' : ' justify-center items-center align-middle'
+        comments?.length ? '' : ' justify-center items-center align-middle'
       }'}`}
     >
-      {listWishes?.length ? (
-        listWishes.map((wish, index) => (
-          <React.Fragment key={index}>
-            <WishCard guestName={wish.guestName} content={wish.content} />
-          </React.Fragment>
-        ))
+      {comments?.length ? (
+        comments.map(
+          (
+            comment: { author: string; message: string },
+            index: React.Key | null | undefined,
+          ) => (
+            <React.Fragment key={index}>
+              <WishCard author={comment.author} message={comment.message} />
+            </React.Fragment>
+          ),
+        )
       ) : (
         <div className="flex w-full md:w-[500px] justify-center items-center">
           <FaSpinner className="text-xl opacity-80 transition-all animate-spin" />
