@@ -5,15 +5,17 @@ import Typography from '@/libs/Typography';
 import React from 'react';
 import PartyItem from './party-item';
 import { albumUrls, parties } from '@/utils/data';
-import { SectionHeadingImage } from '@/layout/section-heading';
+import { SectionHeading } from '@/layout/section-heading';
 import { Button } from '@/libs/Button';
-// import { appendRowData, getIDs } from '@/services/spreadsheet';
 import { toast } from 'react-toastify';
 import { BsCheckCircleFill } from 'react-icons/bs';
-import { FaPaperPlane, FaSpinner } from 'react-icons/fa';
+import { FaSpinner } from 'react-icons/fa';
 import Modal from '@/libs/modal';
 import Image from 'next/image';
 import RadioButton from '@/libs/radio-button';
+import { appendRowData, getIDs } from '@/services/spreadsheets';
+import groomParty from '@/public/images/groom-party.jpeg';
+import brideParty from '@/public/images/bride-party.jpeg';
 
 enum GUEST {
   GROOM_GUEST = 'GROOM_GUEST',
@@ -22,12 +24,6 @@ enum GUEST {
 const originalIcon = (
   <BsCheckCircleFill
     className="text-lg opacity-80 transition-all 
-group-hover:translate-x-1 group-hover:-translate-y-1"
-  />
-);
-const wishSubmitIcon = (
-  <FaPaperPlane
-    className="text-xs opacity-80 transition-all 
 group-hover:translate-x-1 group-hover:-translate-y-1"
   />
 );
@@ -80,15 +76,14 @@ export default function Parties() {
     } else {
       try {
         setIsLoading(true);
-        // const newestIds = await getIDs();
-        // const rowSubmit = {
-        //   STT: newestIds,
-        //   'Guest name': guestName,
-        //   Type: selectedOption,
-        //   'Confirm Info': confirmInfo,
-        //   Number: 1,
-        // };
-        // await appendRowData(rowSubmit);
+        const newestIds = await getIDs();
+        const rowSubmit = {
+          STT: newestIds,
+          'Guest name': guestName,
+          Type: selectedOption,
+          'Confirm Info': confirmInfo,
+        };
+        await appendRowData(rowSubmit as never);
       } catch (error) {
         console.log(error);
       } finally {
@@ -111,13 +106,22 @@ export default function Parties() {
       className="w-full bg-white text-center sm:pt-10"
       id="parties"
     >
-      <SectionHeadingImage className="mt-10 md:mt-20">
-        Tiệc cưới
-      </SectionHeadingImage>
+      <SectionHeading className="mt-10 md:mt-20">Tiệc cưới</SectionHeading>
       <div className="w-full mt-16 sm:px-10 xs:px-5 md:px-32 lg:px-16 fhd:px-16 sm:gap-5 md:gap-10 lg:gap-14 flex flex-wrap flex-row justify-center relative">
         {parties.map((party, index) => (
           <React.Fragment key={index}>
-            <PartyItem {...party} />
+            <div className="relative flex rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src={party.house === 'NHÀ TRAI' ? groomParty : brideParty}
+                height={6509 / 10}
+                width={4342 / 10}
+                alt="Wedding couple"
+                priority
+              />
+            </div>
+            <div className="">
+              <PartyItem {...party} />
+            </div>
           </React.Fragment>
         ))}
       </div>
@@ -151,7 +155,7 @@ export default function Parties() {
             variant="h2"
             className="xs:!text-2xl text-black font-bold"
           >
-            Nguyễn Tuấn ❤️ Trương Bích
+            Tiến Dũng ❤️ Ngọc Khánh
           </Typography>
           <input
             placeholder="Nhập tên của bạn"

@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^6.4.1",
+    "@emoji-mart/data": "^1.2.1",
+    "@emoji-mart/react": "^1.1.1",
     "axios": "^1.8.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
@@ -23,8 +24,7 @@
     "react-intersection-observer": "^9.15.1",
     "react-toastify": "^11.0.5",
     "socket.io-client": "^4.8.1",
-    "swr": "^2.3.2",
-    "ws": "^8.18.1"
+    "swr": "^2.3.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

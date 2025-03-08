@@ -7,7 +7,6 @@ import ImageGrid from './image-grid';
 import { Button } from '@/libs/Button';
 import Modal from '@/libs/modal';
 import AllAlbum from './all-album';
-import { useWindowSize } from '@/hooks/useWindowSize';
 
 export default function Gallery() {
   const { ref } = useSectionInView({ sectionName: 'Album cưới' });
@@ -19,14 +18,14 @@ export default function Gallery() {
         Our Album
       </SectionHeading>
       <ImageGrid images={albumUrls} imagesSm={albumUrlsSm} />
-      <div className='w-full flex justify-center items-center'>
+      <div className="w-full flex justify-center items-center">
         <Button onClick={() => setOpen(true)}>See all</Button>
       </div>
       <Modal
         open={open}
         fullScreen
         onClose={() => setOpen(false)}
-        classNameContainer='!bg-black'
+        classNameContainer="!bg-black"
         onKeyDown={(event) => event.key === 'Escape' && setOpen(false)}
       >
         <AllAlbum />

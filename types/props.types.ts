@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 export type PartyItemProps = {
   house: 'NHÀ TRAI' | 'NHÀ GÁI';
   hour: string;
@@ -5,6 +7,7 @@ export type PartyItemProps = {
   date: string;
   address: string;
   location: string;
+  image?: StaticImageData;
 };
 
 export interface ShapeProps {

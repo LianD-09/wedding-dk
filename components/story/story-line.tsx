@@ -7,7 +7,7 @@ type Props = {
   description: string;
   year: string | Array<string>;
   index: number;
-  image: any;
+  image: never;
 };
 
 export default function StoryLine({

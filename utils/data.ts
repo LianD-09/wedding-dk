@@ -45,7 +45,7 @@ export const albumUrls = [
     horizontal: true,
   },
   {
-    src: 'https://i.imgur.com/Z7eFICZ.jpg', // Col - 3
+    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 3
     height: 1264,
     width: 1896,
     horizontal: false,
@@ -75,7 +75,7 @@ export const albumUrls = [
     horizontal: false,
   },
   {
-    src: 'https://i.imgur.com/Z7eFICZ.jpg', // Col - 2
+    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 2
     height: 1264,
     width: 1896,
     horizontal: false,
@@ -100,7 +100,7 @@ export const albumUrls = [
     horizontal: false,
   },
   {
-    src: 'https://i.imgur.com/Z7eFICZ.jpg', // Col - 3
+    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 3
     height: 1264,
     width: 1896,
     horizontal: false,
@@ -136,7 +136,7 @@ export const albumUrls = [
     horizontal: true,
   },
   {
-    src: 'https://i.imgur.com/Z7eFICZ.jpg', // Col - 3
+    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 3
     height: 1264,
     width: 1896,
     horizontal: false,
@@ -164,7 +164,7 @@ export const albumUrlsSm = [
     horizontal: true,
   },
   {
-    src: 'https://i.imgur.com/Z7eFICZ.jpg', // Col - 2
+    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 2
     height: 1264,
     width: 1896,
     horizontal: false,
@@ -225,7 +225,7 @@ export const storyLine = [
     description: `Love`,
     year: '09 - 2018',
     image: {
-      src: 'https://i.imgur.com/Z7eFICZ.jpg',
+      src: 'https://i.imgur.com/jUlqWyc.jpeg',
       width: 5120,
       height: 5120,
     } as StaticImageData,
@@ -236,24 +236,22 @@ export const couple = {
   groom: {
     name: 'Tiến Dũng',
     image: {
-      src: 'https://i.imgur.com/Z7eFICZ.jpg',
+      src: 'https://i.imgur.com/jUlqWyc.jpeg',
       width: 1264,
       height: 1896,
     } as StaticImageData,
-    description:
-      'Cái này phải để anh Dũng nghĩ thôi ạ 😁',
+    description: 'Cái này phải để anh Dũng nghĩ thôi ạ 😁',
     facebook: '',
     instagram: '',
   },
   bride: {
     name: 'Ngọc Khánh',
     image: {
-      src: 'https://i.imgur.com/Z7eFICZ.jpg',
+      src: 'https://i.imgur.com/jUlqWyc.jpeg',
       width: 3072,
       height: 4319,
     } as StaticImageData,
-    description:
-      'Cô dâu cũng phải nghĩ nha ạ 😍',
+    description: 'Cô dâu cũng phải nghĩ nha ạ 😍',
     facebook: '',
     instagram: '',
   },
@@ -285,16 +283,16 @@ export const slides = [
 
 export const banks = [
   {
-    bankName: '',
-    cardNumber: '',
+    bankName: 'VIETINBANK',
+    cardNumber: '123456789',
     cardHolder: 'MAI TIEN DUNG',
     image: groomQR,
     type: 'GROOM',
   },
   {
-    bankName: '',
-    cardNumber: 'DO HOANG NGOC KHANH',
-    cardHolder: '',
+    bankName: 'VIETINBANK',
+    cardNumber: '123456789',
+    cardHolder: 'DO HOANG NGOC KHANH',
     image: brideQR,
     type: 'BRIDE',
   },
@@ -303,18 +301,30 @@ export const banks = [
 export const parties: Array<PartyItemProps> = [
   {
     house: 'NHÀ TRAI',
-    hour: '10',
+    hour: '16',
     minute: '00',
     date: 'Thứ Bảy | 22 . 03 . 2025',
-    address: '',
-    location: '',
+    address: 'Khu Đường Sông, Phúc Sơn, Vũ Ninh, TP. Bắc Ninh',
+    location:
+      'https://maps.app.goo.gl/X2TzuWtnDdHQh14LA?g_st=com.google.maps.preview.copy',
+    image: {
+      src: 'https://i.imgur.com/jUlqWyc.jpeg',
+      width: 3072,
+      height: 4319,
+    } as StaticImageData,
   },
   {
     house: 'NHÀ GÁI',
     hour: '10',
     minute: '00',
     date: 'Thứ Bảy | 22 . 03 . 2025',
-    address: '',
-    location: '',
+    address: 'Số 7 ngách 35 ngõ 5 Liên Mạc, Bắc Từ Liêm, Hà Nội',
+    location:
+      'https://maps.app.goo.gl/KhpgJMMLMdkEbGCm8?g_st=com.google.maps.preview.copy',
+    image: {
+      src: 'https://i.imgur.com/jUlqWyc.jpeg',
+      width: 3072,
+      height: 4319,
+    } as StaticImageData,
   },
 ];

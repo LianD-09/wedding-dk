@@ -1,9 +1,10 @@
-import { postComment } from '@/libs/api';
+import { postComment } from '@/services/api';
 import { Button } from '@/libs/Button';
 import Typography from '@/libs/Typography';
-import React, { FormEvent } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { FaPaperPlane, FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import EmojiInput from '@/libs/Input/emoji-input';
 
 const originalIcon = (
   <FaPaperPlane
@@ -16,31 +17,34 @@ const loadingIcon = (
   <FaSpinner className="text-xs opacity-80 transition-all animate-spin" />
 );
 
+interface FormState {
+  author: string;
+  message: string;
+}
+
 export default function WishForm() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+  const initialFormState: FormState = {
+    author: '',
+    message: '',
+  };
+
+  const [formData, setFormData] = useState<FormState>(initialFormState);
+
   const submitForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
 
     try {
-      const formData = new FormData(event.currentTarget);
-      const dataSubmit = Object.fromEntries(formData.entries()) as unknown as {
-        author: string;
-        message: string;
-      };
-      await postComment(dataSubmit.author, dataSubmit.message);
+      await postComment(formData.author, formData.message);
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
       setIsSubmitted(!isSubmitted);
-      const authorElement = document.getElementById('name') as HTMLInputElement;
-      const messageElement = document.getElementById(
-        'wish',
-      ) as HTMLInputElement;
-      authorElement.value = '';
-      messageElement.value = '';
+      setFormData(initialFormState);
       toast.success('Thanks for give us wishes!', {
         hideProgressBar: true,
         position: 'top-center',
@@ -48,9 +52,17 @@ export default function WishForm() {
       });
     }
   };
-  const handleChangeGuestNamePlaceholder = (placeholder: string) => {
-    const guestNameEle = document.getElementById('name') as HTMLInputElement;
-    guestNameEle.placeholder = placeholder;
+
+  const handleChange = (
+    e:
+      | ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+      | { target: { name: string; value: string } },
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
   return (
     <div
@@ -66,28 +78,29 @@ export default function WishForm() {
         --
       </Typography>
       <form
-        className="flex flex-col md:mt-10 xs:mt-2 w-full p-6"
+        className="flex flex-col md:mt-10 xs:mt-2 w-full p-6 gap-3"
         onSubmit={submitForm}
       >
         <input
           type="text"
+          id="author"
           name="author"
-          id="name"
-          className="md:h-[3.5rem] xs:h-[3rem] border-b-secondary px-3 bg-white focus:outline-none rounded-none"
-          placeholder="Nhập họ tên *"
-          onFocus={() =>
-            handleChangeGuestNamePlaceholder('VD: Thảo - Bạn thân cô dâu')
-          }
-          onBlur={() => handleChangeGuestNamePlaceholder('Nhập họ tên *')}
+          value={formData.author}
+          onChange={handleChange}
+          placeholder="Nhập tên của bạn *"
+          className="md:h-[3.5rem] xs:h-[3rem] border px-3 bg-white text-khaki focus:outline-none rounded-none"
           required
         />
-        <textarea
+        <EmojiInput
+          id="message"
           name="message"
-          id="wish"
-          className="md:h-[9rem] xs:h-[7rem] my-3 border-b-secondary p-3 bg-white focus:outline-none rounded-none"
-          placeholder="Nhập lời chúc của bạn *"
-          maxLength={4000}
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Type your message here..."
+          rows={4}
+          className="border bg-white focus:outline-none rounded-none text-khaki"
           required
+          maxLength={500}
         />
         <div className="flex justify-center items-center">
           <Button
