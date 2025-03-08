@@ -30,6 +30,250 @@ export const links = [
   },
 ] as const;
 
+// 40 - full
+export const fullAlbum = [
+  {
+    src: 'https://i.imgur.com/DCBIBSM.jpeg',
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/oDRYzFo.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/jU1V31j.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/oWJ1zoL.jpeg',
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/IeaGesZ.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/K2J6ssK.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/ppOxYvc.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/hfeVMI8.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/QX8PCvh.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/c5nVxgo.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/sZ4X6ZJ.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/b29AjZ3.jpeg',
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/4huKOjj.jpeg',
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/p2JrlDC.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/j5DwG5d.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/upOuEfr.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/jqlOgAp.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/LCsZFLg.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/ysEpkUZ.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/peZGbgk.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/wK9KuCA.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/D5r97UW.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/sUpa8cQ.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/BrnicNV.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/KKonsxU.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/wmQ86cX.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/dnbTpEO.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/4F0YkmH.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/2cLvLgO.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/Gow4Ir4.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/H0MMQFC.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/Z8Fd1TV.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/5aDpSuv.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/Nn09jY1.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/ITIrfUC.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/9kYNI0y.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/wmrZ3U2.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/kBFGjoi.jpeg',
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/i5xjO2B.jpeg',
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+] as Array<AlbumImage>;
+
 // 20 - images
 export const albumUrls = [
   {

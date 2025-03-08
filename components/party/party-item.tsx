@@ -26,41 +26,41 @@ export default function PartyItem({
       className={`basis-full sm:basis-5/12 lg:basis-[35%] fhd:basis-[30%] mb-10`}
     >
       <div
-        className={`z-10 flex flex-col gap-5 pb-5 md:pb-10 lg:px-16 items-center
-       h-full w-full shadow-[0_0px_25px_0px_rgba(0,0,0,0.2)] relative
+        className={`z-10 flex flex-col gap-2 md:gap-5 pb-5 md:pb-10 lg:px-16 items-center
+       h-full w-full relative
        `}
       >
-        <div className="w-full h-full absolute z-10 bg-cs-green-300 opacity-[65%] rounded-lg"></div>
+        <div className="w-full h-full absolute z-10 bg-cs-green-300 bg-cararra flex p-5"></div>
         <Typography
           variant="h3"
           className="!font-bold md:!text-3xl xs:!text-2xl mt-10 z-20"
         >
           {house}
         </Typography>
-        <Typography variant="h4" className="z-20">
+        <Typography variant="h4" className="z-20 !text-black">
           ĐƯỢC TỔ CHỨC VÀO LÚC {hour} GIỜ {minute}
           {"'"}
         </Typography>
         <div className="flex justify-center items-center flex-row gap-2 z-20">
-          <FaClock className="text-secondary-cl" />
+          <FaClock className="text-black" />
           <Typography
             variant="h3"
-            className="!font-semibold !text-2xl xs:!text-xl"
+            className="!font-semibold !text-2xl xs:!text-xl !text-black"
           >
             {date}
           </Typography>
         </div>
         <Typography
           variant="desc"
-          className="!italic z-20 !font-semibold !text-gray-700"
+          className="!italic z-20 !font-semibold !text-black"
         >
-          -- Tức Ngày 23 Tháng 01 Năm Ất Tỵ --
+          -- Tức Ngày 23 Tháng 02 Năm Ất Tỵ --
         </Typography>
-        <div className="flex justify-center items-center flex-row gap-2 z-20">
-          <FaLocationDot className="text-secondary-cl" />
+        <div className="flex justify-center items-center flex-row gap-2 z-20 p-5">
+          <FaLocationDot className="text-black" />
           <Typography
             variant="desc"
-            className="!font-semibold !text-secondary-cl"
+            className="!font-semibold !text-secondary-cl !text-black xs:!text-xs md:!text-base"
           >
             {address}
           </Typography>

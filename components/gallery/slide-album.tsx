@@ -31,7 +31,6 @@ class SlideAlbum extends React.Component<Props> {
 
   componentDidMount(): void {
     this.nextImage = setInterval(() => {
-      console.log('call');
       const nextIndex = (this.props.selected + 1) % this.props.items.length;
       this.props.onSelect(nextIndex);
     }, 5000);
@@ -62,7 +61,6 @@ class SlideAlbum extends React.Component<Props> {
 
       // reset next image interval
       this.nextImage = setInterval(() => {
-        console.log('call 2');
         const nextIndex = (nextProps.selected + 1) % this.props.items.length;
         this.props.onSelect(nextIndex);
       }, 5000);
@@ -95,11 +93,10 @@ class SlideAlbum extends React.Component<Props> {
                 alt=""
                 priority
                 className={`h-full w-fit object-center object-cover rounded-md lg:rounded-2xl
-                            transition-all duration-500 ${
-                              index === this.props.selected
-                                ? 'opacity-100 scale-105'
-                                : 'opacity-50'
-                            } 
+                            transition-all duration-500 ${index === this.props.selected
+                    ? 'opacity-100 scale-105'
+                    : 'opacity-50'
+                  } 
                             cursor-pointer hover:scale-105`}
               />
             </div>

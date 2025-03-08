@@ -46,6 +46,18 @@ export default function Modal({
     }
   }, [isBelowSm]);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Re-enable scrolling
+    }
+
+    return () => {
+      document.body.style.overflow = "auto"; // Cleanup on unmount
+    };
+  }, [open]);
+
   if (!open) return null;
   return (
     <motion.div

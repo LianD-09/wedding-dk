@@ -16,6 +16,7 @@ import RadioButton from '@/libs/radio-button';
 import { appendRowData, getIDs } from '@/services/spreadsheets';
 import groomParty from '@/public/images/groom-party.jpeg';
 import brideParty from '@/public/images/bride-party.jpeg';
+import { Triangle } from '@/libs/Shape';
 
 enum GUEST {
   GROOM_GUEST = 'GROOM_GUEST',
@@ -103,26 +104,35 @@ export default function Parties() {
   return (
     <section
       ref={ref}
-      className="w-full bg-white text-center sm:pt-10"
+      className="w-full bg-black text-center sm:py-32 py-20 relative gap-10 flex flex-col px-0 sm:px-20 md:px-0"
       id="parties"
     >
-      <SectionHeading className="mt-10 md:mt-20">Tiệc cưới</SectionHeading>
-      <div className="w-full mt-16 sm:px-10 xs:px-5 md:px-32 lg:px-16 fhd:px-16 sm:gap-5 md:gap-10 lg:gap-14 flex flex-wrap flex-row justify-center relative">
+      <Triangle type="rtt" className="absolute top-0 left-0" />
+      <Triangle type="rtb" className="absolute bottom-0 left-0" />
+      <SectionHeading className="sm:!mb-2 md:!mb-6 md:mt-40 md:!text-8xl !font-bold text-white">Wedding Parties</SectionHeading>
+      <div
+        className="w-full mt-16 sm:p-10 xs:p-5 md:px-32 lg:px-16 
+        fhd:px-16 sm:gap-5 md:gap-10 lg:gap-16 flex flex-wrap flex-row justify-center relative
+        bg-white md:bg-transparent
+        ">
         {parties.map((party, index) => (
-          <React.Fragment key={index}>
-            <div className="relative flex rounded-lg overflow-hidden shadow-xl">
+          <div key={index} className='justify-center items-center flex gap-10 relative'>
+            <div className="hidden md:flex overflow-hidden shadow-xl border-[2rem] border-white z-10">
               <Image
                 src={party.house === 'NHÀ TRAI' ? groomParty : brideParty}
                 height={6509 / 10}
                 width={4342 / 10}
                 alt="Wedding couple"
+                className=''
                 priority
               />
+              <div className='absolute top-[2rem] w-full h-full bg-white -z-10' />
             </div>
+
             <div className="">
               <PartyItem {...party} />
             </div>
-          </React.Fragment>
+          </div>
         ))}
       </div>
       <div className="md:mt-6 xs:mt-3 flex items-center justify-center">
@@ -165,7 +175,7 @@ export default function Parties() {
             value={guestName}
             onChange={handleGuestNameChange}
           ></input>
-          <div className="flex md:flex-row xs:flex-col justify-center items-center p-3 gap-3">
+          <div className="flex md:flex-row xs:flex-col justify-center items-center p-3 gap-3 text-black">
             <RadioButton
               label="Khách nhà trai"
               checked={selectedOption === GUEST.GROOM_GUEST}

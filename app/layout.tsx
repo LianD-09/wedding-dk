@@ -18,10 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${segoe.variable} ${playfair.variable} ${windSong.variable}`}>
-      <PreloadResources />
       <body
         className={`${segoe.className} antialiased bg-white overflow-x-hidden scroll-smooth`}
       >
+        <PreloadResources />
         <ActiveSectionContextProvider>
           <Header />
           {children}

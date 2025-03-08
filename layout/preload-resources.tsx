@@ -1,5 +1,5 @@
-'use client ';
-
+import { fullAlbum } from '@/utils/data';
+import Image from 'next/image';
 import ReactDOM from 'react-dom';
 
 // preload images
@@ -14,5 +14,19 @@ export function PreloadResources() {
     fetchPriority: 'auto',
   });
 
-  return null;
+  const preloadExternalImages = () => {
+    return fullAlbum.map((s, index) => (
+      <Image
+        src={s}
+        alt="My wedding image"
+        priority
+        hidden
+        key={index}
+      />
+    ))
+  }
+
+  return <div className='hidden'>
+    {preloadExternalImages()}
+  </div>;
 }
