@@ -8,11 +8,9 @@ import Intro from '@/components/intro/intro';
 import HeartFalling from '@/components/main/heart-falling';
 import Parties from '@/components/party/parties';
 import Wishes from '@/components/wish/wishes';
-import { client } from '@/libs/graphql-client';
 import Carousel from '@/libs/Slide/Carousel';
 import { slides } from '@/utils/data';
 import { ToastContainer } from 'react-toastify';
-import { Provider } from 'urql';
 
 export default function Home() {
   return (
@@ -23,9 +21,7 @@ export default function Home() {
       <CountdownTimer />
       <Parties />
       <Gallery />
-      <Provider value={client}>
-        <Wishes />
-      </Provider>
+      <Wishes />
       <Congrats />
       <Gift />
       <ToastContainer />

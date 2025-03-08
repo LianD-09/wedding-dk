@@ -1,44 +1,23 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import WishCard from './wish-card';
 import { FaSpinner } from 'react-icons/fa';
-import { useQuery, useSubscription } from 'urql';
-
-const COMMENTS_QUERY = `
-  query {
-    comments {
-      id
-      author
-      message
-      createdAt
-    }
-  }
-`;
-
-const COMMENT_SUBSCRIPTION = `
-  subscription {
-    commentAdded {
-      id
-      author
-      message
-      createdAt
-    }
-  }
-`;
+import useSWR from 'swr';
+import { fetchComments } from '@/libs/api';
+import socket from '@/libs/ws-client';
 
 export default function WishList() {
-  const [res] = useQuery({ query: COMMENTS_QUERY });
-  const [subRes] = useSubscription(
-    { query: COMMENT_SUBSCRIPTION },
-    (_, data) => {
-      return data
-        ? { comments: [data.commentAdded, ...res.data.comments] }
-        : res.data;
-    },
-  );
+  const { data: comments, mutate } = useSWR('comments', fetchComments);
 
-  const comments = subRes?.data?.comments || res.data?.comments || [];
+  useEffect(() => {
+    socket.on('NEW_COMMENT', (comment) => {
+      mutate([comment, ...comments]);
+    });
 
+    return () => {
+      socket.off('NEW_COMMENT');
+    };
+  }, [comments, mutate]);
   return (
     <div
       className={`flex bg-white flex-col md:mt-10 xs:mt-1 border-[3px] w-full

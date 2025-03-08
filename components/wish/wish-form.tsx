@@ -1,20 +1,10 @@
+import { postComment } from '@/libs/api';
 import { Button } from '@/libs/Button';
 import Typography from '@/libs/Typography';
 import React, { FormEvent } from 'react';
 import { FaPaperPlane, FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import { useMutation } from 'urql';
 
-const COMMENTS_MUTATION = `
-  mutation($author: String!, $message: String!) {
-    addComment(author: $author, message: $message) {
-      id
-      author
-      message
-      createdAt
-    }
-  }
-`;
 const originalIcon = (
   <FaPaperPlane
     className="text-xs opacity-80 transition-all 
@@ -29,7 +19,6 @@ const loadingIcon = (
 export default function WishForm() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
-  const [, addComment] = useMutation(COMMENTS_MUTATION);
   const submitForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
@@ -40,7 +29,7 @@ export default function WishForm() {
         author: string;
         message: string;
       };
-      await addComment(dataSubmit);
+      await postComment(dataSubmit.author, dataSubmit.message);
     } catch (error) {
       console.log(error);
     } finally {
