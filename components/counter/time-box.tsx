@@ -29,10 +29,7 @@ export default function TimeBox({ time, title }: TimeBoxProps) {
       >
         {time}
       </Typography>
-      <Typography
-        variant="h3"
-        className={`font-normal text-white`}
-      >
+      <Typography variant="h3" className={`font-normal text-white`}>
         {title}
       </Typography>
     </div>
