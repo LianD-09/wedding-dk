@@ -8,7 +8,7 @@ import moment from 'moment';
 
 type Props = {
   item: {
-    image: any;
+    image: never;
     title: string;
     date: string;
     time: string;

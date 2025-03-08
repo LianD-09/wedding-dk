@@ -1,11 +1,6 @@
 import Typography from '@/libs/Typography';
 import React from 'react';
-import {
-  Great_Vibes,
-  Playball,
-  Plus_Jakarta_Sans,
-  Sriracha,
-} from 'next/font/google';
+import { Playball } from 'next/font/google';
 
 const timeFont = Playball({ weight: '400', subsets: ['vietnamese'] });
 // const timeTitle = Plus_Jakarta_Sans({ weight: '400', subsets: ['vietnamese'] });

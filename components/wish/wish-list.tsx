@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import WishCard from './wish-card';
 import { FaSpinner } from 'react-icons/fa';
 import useSWR from 'swr';
-import { fetchComments } from '@/libs/api';
-import socket from '@/libs/ws-client';
+import { fetchComments } from '@/services/api';
+import socket from '@/services/ws-client';
 
 export default function WishList() {
   const { data: comments, mutate } = useSWR('comments', fetchComments);

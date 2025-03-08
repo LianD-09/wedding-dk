@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
       config.resolve.fallback.net = false;
       config.resolve.fallback.child_process = false;
     }
+
+    config.node = {
+      fs: 'empty',
+      child_process: 'empty',
+      net: 'empty',
+      dns: 'empty',
+      tls: 'empty',
+    };
 
     config.externals.push({
       'utf-8-validate': 'commonjs utf-8-validate',
@@ -31,7 +39,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
       },
     ],
-  }
+  },
 };
 
 export default nextConfig;

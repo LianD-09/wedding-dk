@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { albumUrls } from '@/utils/data';
 import AlbumImage from './album-image';
 import SlideAlbum from './slide-album';
