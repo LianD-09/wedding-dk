@@ -78,7 +78,7 @@ export default function Header() {
       ) : (
         <>
           <motion.div
-            className="fixed top-0 left-1/2 -translate-x-1/2 h-12 xl:w-[55%] xlm:w-[48%] md:w-3/4 lg:w-[66%] lgm:w-[60%] rounded-none 
+            className="fixed top-0 left-1/2 -translate-x-1/2 h-12 xl:w-[50%] xlm:w-[48%] md:w-3/4 lg:w-[66%] lgm:w-[60%] rounded-none 
             border border-white border-opacity-30 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6"
             initial={{ y: -100, x: '-50%', opacity: 0 }}
             animate={{ y: 0, x: '-50%', opacity: 1 }}
@@ -105,13 +105,13 @@ export default function Header() {
                         setTimeOfLastClick(Date.now());
                       }}
                     >
-                      <text className={`${activeSection === link.name ? 'invisible' : ''}`}>{link.name}</text>
+                      <p className={`${activeSection === link.name ? 'invisible' : ''}`}>{link.name}</p>
                       {link.name === activeSection && (
                         <motion.span
-                          className="bg-khaki absolute inset-0 -z-10 flex justify-center items-center font-bold text-white"
+                          className="bg-khaki absolute inset-0 -z-10 flex justify-center items-center font-bold text-white top-1"
                           layoutId="activeSection"
                           initial={{ height: 0 }}
-                          animate={{ height: 80 }}
+                          animate={{ height: 60 }}
                           transition={{
                             duration: 0.5
                           }}

@@ -5,16 +5,12 @@ import brideQR from '@/public/bride_qr.jpeg';
 import { AlbumImage } from '@/types/common.types';
 export const links = [
   {
+    name: 'Trang chủ',
+    hash: '#',
+  },
+  {
     name: 'Giới thiệu',
     hash: '#intro',
-  },
-  {
-    name: 'Chuyện tình yêu',
-    hash: '#story',
-  },
-  {
-    name: 'Sự kiện',
-    hash: '#events',
   },
   {
     name: 'Tiệc cưới',

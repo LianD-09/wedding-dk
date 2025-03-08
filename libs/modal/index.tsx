@@ -8,8 +8,10 @@ type ModalProps = {
   onClose: () => void;
   children: ReactNode;
   title?: string;
+  fullScreen?: boolean;
   className?: string;
   classNameChildren?: string;
+  classNameContainer?: string;
   classNameTitle?: string;
   classNameHeader?: string;
   onKeyDown?: (e: KeyboardEvent) => void;
@@ -24,6 +26,8 @@ export default function Modal({
   classNameTitle = '',
   classNameHeader = '',
   title,
+  fullScreen,
+  classNameContainer = '',
   onKeyDown
 }: ModalProps) {
   const { isBelowSm } = useWindowSize();
@@ -55,7 +59,7 @@ export default function Modal({
         className="fixed inset-0 bg-black opacity-50"
         onClick={onClose}
       ></div>
-      <div className="bg-white rounded-lg z-10 relative">
+      <div className={`bg-white rounded-lg z-10 relative ${fullScreen ? `w-screen h-screen` : ''} ${classNameContainer}`}>
         <div className={`relative flex justify-center ${classNameHeader}`}>
           {title && (
             <Typography
@@ -77,7 +81,7 @@ export default function Modal({
         </div>
         <div
           className={`md:px-16 xs:px-4 md:py-10 pb-5 ${title ? 'xs:pt-2' : 'xs:pt-7'
-            } ${classNameChildren}`}
+            } ${classNameChildren} h-full`}
         >
           {children}
         </div>

@@ -65,7 +65,7 @@ export default function Footer() {
               className={`p-3 -ml-12 !font-semibold md:pl-14 w-auto xs:pl-14
           !text-white ${isClose ? 'animate-slide-in-left' : 'animate-slide-in-right'
                 }
-          bg-white
+          bg-tamarillo
           ${isPause ? 'bg-tamarillo' : 'bg-khaki'} rounded-3xl
           text-center justify-center items-center flex z-[10] !text-sm
            `}
