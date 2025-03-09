@@ -1,179 +1,134 @@
-import React, { useState, useRef, ChangeEvent } from 'react';
-import data from '@emoji-mart/data';
-import Picker from '@emoji-mart/react';
+import React, { useState, useRef, useEffect, forwardRef } from 'react';
+import EmojiPicker, { EmojiClickData } from 'emoji-picker-react';
+import { Smile } from 'lucide-react';
 
 interface EmojiInputProps {
-  id: string;
-  name: string;
   value: string;
-  onChange: (
-    e:
-      | ChangeEvent<HTMLTextAreaElement>
-      | { target: { name: string; value: string } },
-  ) => void;
-  placeholder?: string;
-  rows?: number;
+  onChange: (value: string) => void;
+  onBlur?: React.FocusEventHandler<HTMLTextAreaElement>;
   className?: string;
-  disabled?: boolean;
-  required?: boolean;
-  maxLength?: number;
+  placeholder?: string;
+  name?: string;
+  id?: string;
+  error?: string;
+  rows?: number;
 }
 
-interface EmojiObject {
-  native: string;
-  id: string;
-  unified: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
-}
+const EmojiInput = forwardRef<HTMLTextAreaElement, EmojiInputProps>(
+  (
+    {
+      value,
+      onChange,
+      onBlur,
+      className = '',
+      placeholder = 'Type a message...',
+      name,
+      id,
+      error,
+      rows = 3,
+      ...rest
+    },
+    ref,
+  ) => {
+    const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+    const emojiPickerRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-const EmojiInput: React.FC<EmojiInputProps> = ({
-  id,
-  name,
-  value,
-  onChange,
-  placeholder = 'Type your message...',
-  rows = 3,
-  className = '',
-  disabled = false,
-  required = false,
-  maxLength,
-}) => {
-  const [showEmojiPicker, setShowEmojiPicker] = useState<boolean>(false);
-  const inputRef = useRef<HTMLTextAreaElement>(null);
-  const pickerRef = useRef<HTMLDivElement>(null);
+    // Merge the forwarded ref with our internal ref
+    const handleRef = (element: HTMLTextAreaElement) => {
+      // Update our internal ref
+      (textareaRef as React.RefObject<HTMLTextAreaElement | null>).current =
+        element;
 
-  const handleEmojiSelect = (emoji: EmojiObject) => {
-    if (!inputRef.current) return;
-
-    // Get current cursor position
-    const startPos = inputRef.current.selectionStart || 0;
-    const endPos = inputRef.current.selectionEnd || 0;
-
-    // Check if adding the emoji would exceed maxLength
-    if (
-      maxLength &&
-      value.length - (endPos - startPos) + emoji.native.length > maxLength
-    ) {
-      return;
-    }
-
-    // Insert emoji at cursor position
-    const newValue =
-      value.substring(0, startPos) +
-      emoji.native +
-      value.substring(endPos, value.length);
-
-    // Create synthetic event with the correct structure
-    const syntheticEvent = {
-      target: {
-        name,
-        value: newValue,
-      },
-    };
-
-    // Call the onChange handler with our synthetic event
-    onChange(syntheticEvent);
-
-    // Focus back on textarea after emoji insertion
-    setTimeout(() => {
-      if (inputRef.current) {
-        inputRef.current.focus();
-        inputRef.current.setSelectionRange(
-          startPos + emoji.native.length,
-          startPos + emoji.native.length,
-        );
+      // Forward the ref if it exists
+      if (typeof ref === 'function') {
+        ref(element);
+      } else if (ref) {
+        (ref as React.RefObject<HTMLTextAreaElement | null>).current = element;
       }
-    }, 10);
-  };
-
-  const toggleEmojiPicker = () => {
-    setShowEmojiPicker(!showEmojiPicker);
-  };
-
-  // Close emoji picker when clicking outside
-  const handleClickOutside = (e: MouseEvent) => {
-    if (
-      showEmojiPicker &&
-      pickerRef.current &&
-      !pickerRef.current.contains(e.target as Node) &&
-      inputRef.current &&
-      !inputRef.current.contains(e.target as Node)
-    ) {
-      setShowEmojiPicker(false);
-    }
-  };
-
-  React.useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showEmojiPicker]);
 
-  return (
-    <div className="relative">
-      <textarea
-        ref={inputRef}
-        id={id}
-        name={name}
-        value={value}
-        onChange={onChange}
-        rows={rows}
-        placeholder={placeholder}
-        className={`w-full p-3 rounded-md ${
-          disabled ? 'bg-gray-100' : ''
-        } ${className}`}
-        disabled={disabled}
-        required={required}
-        maxLength={maxLength}
-      />
+    const handleEmojiSelect = (emojiData: EmojiClickData) => {
+      onChange(value + emojiData.emoji);
+      setShowEmojiPicker(false);
 
-      {!disabled && (
-        <div className="absolute right-3 bottom-3 flex items-center">
-          <button
-            type="button"
-            onClick={toggleEmojiPicker}
-            className="text-gray-500 hover:text-gray-700 focus:outline-none"
-            aria-label="Insert emoji"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+      // Focus the textarea after selecting an emoji
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+      }
+    };
+
+    const toggleEmojiPicker = (e: React.MouseEvent) => {
+      e.preventDefault(); // Prevent form submission if inside a form
+      setShowEmojiPicker(!showEmojiPicker);
+    };
+
+    // Close emoji picker when clicking outside
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (
+          emojiPickerRef.current &&
+          buttonRef.current &&
+          !emojiPickerRef.current.contains(event.target as Node) &&
+          !buttonRef.current.contains(event.target as Node)
+        ) {
+          setShowEmojiPicker(false);
+        }
+      };
+
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
+
+    return (
+      <div className="relative w-full">
+        <div
+          className={`flex flex-col overflow-hidden border bg-white ${
+            error ? 'border-red-500' : 'border-gray-300'
+          }`}
+        >
+          <textarea
+            ref={handleRef}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            className={`w-full p-3 outline-none caret-khaki border-none resize-none ${className} `}
+            placeholder={placeholder}
+            name={name}
+            id={id || name}
+            onBlur={onBlur}
+            rows={rows}
+            {...rest}
+          />
+          <div className="flex justify-end border-none border-gray-100">
+            <button
+              ref={buttonRef}
+              type="button"
+              onClick={toggleEmojiPicker}
+              className="p-2 text-gray-500 hover:text-gray-700 focus:outline-none"
             >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-              <line x1="9" y1="9" x2="9.01" y2="9"></line>
-              <line x1="15" y1="9" x2="15.01" y2="9"></line>
-            </svg>
-          </button>
-        </div>
-      )}
-
-      {showEmojiPicker && (
-        <div ref={pickerRef} className="absolute right-0 bottom-12 z-10">
-          <div className="shadow-lg rounded-lg overflow-hidden">
-            <Picker
-              data={data}
-              onEmojiSelect={(emoji: EmojiObject) => {
-                handleEmojiSelect(emoji);
-                setShowEmojiPicker(false);
-              }}
-              theme="light"
-            />
+              <Smile size={20} />
+            </button>
           </div>
         </div>
-      )}
-    </div>
-  );
-};
+
+        {error && <div className="text-red-500 text-sm mt-1">{error}</div>}
+
+        {showEmojiPicker && (
+          <div
+            ref={emojiPickerRef}
+            className="absolute right-0 mt-1 z-10 shadow-lg"
+          >
+            <EmojiPicker onEmojiClick={handleEmojiSelect} />
+          </div>
+        )}
+      </div>
+    );
+  },
+);
+
+EmojiInput.displayName = 'EmojiInput';
 
 export default EmojiInput;
