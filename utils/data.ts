@@ -289,9 +289,9 @@ export const albumUrls = [
     horizontal: true,
   },
   {
-    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 3
-    height: 1264,
-    width: 1896,
+    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
@@ -319,9 +319,9 @@ export const albumUrls = [
     horizontal: false,
   },
   {
-    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 2
-    height: 1264,
-    width: 1896,
+    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
@@ -344,9 +344,9 @@ export const albumUrls = [
     horizontal: false,
   },
   {
-    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 3
-    height: 1264,
-    width: 1896,
+    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
@@ -380,9 +380,9 @@ export const albumUrls = [
     horizontal: true,
   },
   {
-    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 3
-    height: 1264,
-    width: 1896,
+    src: '/images/HR302900.jpg', // Col - 2
+    height: 4000,
+    width: 6000,
     horizontal: false,
   },
 ] as Array<AlbumImage>;
@@ -408,9 +408,9 @@ export const albumUrlsSm = [
     horizontal: true,
   },
   {
-    src: 'https://i.imgur.com/jUlqWyc.jpeg', // Col - 2
-    height: 1264,
-    width: 1896,
+    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
@@ -469,9 +469,9 @@ export const storyLine = [
     description: `Love`,
     year: '09 - 2018',
     image: {
-      src: 'https://i.imgur.com/jUlqWyc.jpeg',
-      width: 5120,
-      height: 5120,
+      src: '/images/HR302900.jpg', // Col - 2
+      height: 4000,
+      width: 6000,
     } as StaticImageData,
   },
 ] as const;
@@ -480,9 +480,9 @@ export const couple = {
   groom: {
     name: 'Tiến Dũng',
     image: {
-      src: 'https://i.imgur.com/jUlqWyc.jpeg',
-      width: 1264,
-      height: 1896,
+      src: '/images/HR302900.jpg', // Col - 2
+      height: 4000,
+      width: 6000,
     } as StaticImageData,
     description: 'Cái này phải để anh Dũng nghĩ thôi ạ 😁',
     facebook: '',
@@ -491,9 +491,9 @@ export const couple = {
   bride: {
     name: 'Ngọc Khánh',
     image: {
-      src: 'https://i.imgur.com/jUlqWyc.jpeg',
-      width: 3072,
-      height: 4319,
+      src: '/images/HR302900.jpg', // Col - 2
+      height: 4000,
+      width: 6000,
     } as StaticImageData,
     description: 'Cô dâu cũng phải nghĩ nha ạ 😍',
     facebook: '',
@@ -527,16 +527,16 @@ export const slides = [
 
 export const banks = [
   {
-    bankName: 'VIETINBANK',
-    cardNumber: '123456789',
-    cardHolder: 'MAI TIEN DUNG',
+    bankName: 'TPBank',
+    cardNumber: '0141 8651 402',
+    cardHolder: 'Mai Tien Dung',
     image: groomQR,
     type: 'GROOM',
   },
   {
-    bankName: 'VIETINBANK',
-    cardNumber: '123456789',
-    cardHolder: 'DO HOANG NGOC KHANH',
+    bankName: 'TPBank',
+    cardNumber: '0038 1394 003',
+    cardHolder: 'Do Hoang Ngoc Khanh',
     image: brideQR,
     type: 'BRIDE',
   },
