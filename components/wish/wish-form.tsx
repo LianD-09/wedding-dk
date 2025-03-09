@@ -53,16 +53,12 @@ export default function WishForm() {
     }
   };
 
-  const handleChange = (
-    e:
-      | ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-      | { target: { name: string; value: string } },
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const handleChangeAuthorInput = (event: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, author: event.target.value });
+  };
+
+  const handleChangeMessageInput = (value: string) => {
+    setFormData({ ...formData, message: value });
   };
   return (
     <div
@@ -86,7 +82,7 @@ export default function WishForm() {
           id="author"
           name="author"
           value={formData.author}
-          onChange={handleChange}
+          onChange={handleChangeAuthorInput}
           placeholder="Nhập tên của bạn *"
           className="md:h-[3.5rem] xs:h-[3rem] border px-3 bg-white text-khaki focus:outline-none rounded-none"
           required
@@ -95,12 +91,9 @@ export default function WishForm() {
           id="message"
           name="message"
           value={formData.message}
-          onChange={handleChange}
-          placeholder="Type your message here..."
-          rows={4}
-          className="border bg-white focus:outline-none rounded-none text-khaki"
-          required
-          maxLength={500}
+          onChange={handleChangeMessageInput}
+          placeholder="Nhập lời nhắn của bạn..."
+          className="border bg-white focus:outline-none rounded-none text-khaki caret-khaki"
         />
         <div className="flex justify-center items-center">
           <Button
