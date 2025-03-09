@@ -11,7 +11,6 @@ type GiftCardProps = {
   type: string;
 };
 export default function GiftCard({
-  bankName,
   cardHolder,
   cardNumber,
   image,
@@ -27,14 +26,24 @@ export default function GiftCard({
   };
   return (
     <div className="flex flex-col border-2 border-cs-green-900 bg-cs-green-500 rounded-md gap-2 p-2 w-1/2 md:min-w-[18rem] xs:min-w-[16rem] justify-center items-center">
-      <Typography variant="desc" className="!text-lg font-medium">
+      <Typography variant="desc" className="!text-lg font-medium text-khaki">
         Mừng cưới đến {type === 'BRIDE' ? 'cô dâu' : 'chú rể'}
       </Typography>
       <div className="flex justify-center items-center self-center md:w-40 xs:w-32">
         <Image alt="qr" src={image} className="object-cover rounded-lg" />
       </div>
-      <Typography variant="h4" className="!leading-4 text-khaki">
-        {bankName}
+      <Typography variant="h4" className="!leading-4">
+        <span
+          style={{
+            color: '#5D3E98',
+            fontFamily: 'Arial, sans-serif',
+            fontWeight: 'bold',
+            fontSize: '1.2rem',
+            letterSpacing: '-0.5px',
+          }}
+        >
+          TP<span style={{ fontWeight: 'normal' }}>Bank</span>
+        </span>
       </Typography>
       <Typography variant="h4" className="!leading-4 text-khaki">
         {cardHolder}

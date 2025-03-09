@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Typography from '@/libs/Typography';
 import Link from 'next/link';
 import { FaFacebook } from 'react-icons/fa';
@@ -7,7 +7,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
 type ItemProps = {
-  image: never;
+  image: StaticImageData;
   description?: string;
   name: string;
   facebook: string;

@@ -109,24 +109,30 @@ export default function Parties() {
     >
       <Triangle type="rtt" className="absolute top-0 left-0" />
       <Triangle type="rtb" className="absolute bottom-0 left-0" />
-      <SectionHeading className="sm:!mb-2 md:!mb-6 md:mt-40 md:!text-8xl !font-bold text-white">Wedding Parties</SectionHeading>
+      <SectionHeading className="sm:!mb-2 md:!mb-6 md:mt-40 md:!text-8xl !font-bold text-white">
+        Wedding Parties
+      </SectionHeading>
       <div
         className="w-full mt-16 sm:p-10 xs:p-5 md:px-32 lg:px-16 
         fhd:px-16 sm:gap-5 md:gap-10 lg:gap-16 flex flex-wrap flex-row justify-center relative
         bg-white md:bg-transparent
-        ">
+        "
+      >
         {parties.map((party, index) => (
-          <div key={index} className='justify-center items-center flex gap-10 relative'>
+          <div
+            key={index}
+            className="justify-center items-center flex gap-10 relative"
+          >
             <div className="hidden md:flex overflow-hidden shadow-xl border-[2rem] border-white z-10">
               <Image
                 src={party.house === 'NHÀ TRAI' ? groomParty : brideParty}
                 height={6509 / 10}
                 width={4342 / 10}
                 alt="Wedding couple"
-                className=''
+                className=""
                 priority
               />
-              <div className='absolute top-[2rem] w-full h-full bg-white -z-10' />
+              <div className="absolute top-[2rem] w-full h-full bg-white -z-10" />
             </div>
 
             <div className="">
@@ -169,7 +175,7 @@ export default function Parties() {
           </Typography>
           <input
             placeholder="Nhập tên của bạn"
-            className="text-center md:h-14 xs:h-10 border-b-secondary px-3 bg-white focus:outline-none rounded-none"
+            className="text-khaki text-center md:h-14 xs:h-10 border-b px-3 bg-white focus:outline-none rounded-none caret-khaki"
             required
             id="guestName"
             value={guestName}
@@ -189,7 +195,7 @@ export default function Parties() {
           </div>
           <input
             placeholder="Bạn sẽ tham dự đám cưới của chúng mình chứ?"
-            className="text-center md:h-14 xs:h-10 border-b-secondary px-3 bg-white focus:outline-none rounded-none"
+            className="text-khaki text-center md:h-14 xs:h-10 border-b px-3 bg-white focus:outline-none caret-khaki rounded-none"
             required
             value={confirmInfo}
             onChange={handleConfirmInfoChange}

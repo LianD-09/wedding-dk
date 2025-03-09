@@ -22,7 +22,7 @@ export default function Gift() {
         <div className="flex justify-center items-center flex-col gap-3">
           <Typography
             variant="h4"
-            className="!text-cs-green-900 md:!text-2xl xs:!text-xl"
+            className="!text-khaki md:!text-2xl xs:!text-xl"
           >
             Gửi quà cho cô dâu ❤️ chú rể ở đây nhé!
           </Typography>
