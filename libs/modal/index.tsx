@@ -72,7 +72,7 @@ export default function Modal({
         onClick={onClose}
       ></div>
       <div
-        className={`bg-white rounded-lg z-10 relative ${fullScreen ? `w-screen h-screen` : ''
+        className={`bg-white rounded-lg z-10 relative ${fullScreen ? `w-dvh h-dvh` : ''
           } ${classNameContainer}`}
       >
         <div className={`relative flex justify-center ${classNameHeader}`}>
