@@ -40,7 +40,7 @@ function AlbumImage({ selected, items }: AlbumImageProps) {
           src={items[selected]}
           alt="My wedding image"
           loading='lazy'
-          onLoad={(e) => {
+          onLoad={() => {
             setLoading(false);
           }}
           className="h-fit sm:h-full w-full rounded-lg transition
