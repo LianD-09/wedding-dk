@@ -3,7 +3,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
+import { FaSpinner } from 'react-icons/fa';
 
 type AlbumImageProps = {
   selected: number;
@@ -11,7 +12,11 @@ type AlbumImageProps = {
 };
 
 function AlbumImage({ selected, items }: AlbumImageProps) {
+  const [loading, setLoading] = useState(false);
 
+  useLayoutEffect(() => {
+    setLoading(true);
+  }, [selected])
   return (
     <AnimatePresence mode='wait' initial={false}>
       <motion.div
@@ -24,12 +29,20 @@ function AlbumImage({ selected, items }: AlbumImageProps) {
           type: 'linear',
           duration: 0.4
         }}
-        className='h-fit sm:h-[50vh] lg:h-[50vh] flex flex-grow justify-center items-center px-10 bg-transparent'
+        className='h-fit sm:h-[50vh] lg:h-[50vh] flex flex-grow justify-center items-center px-10 bg-transparent relative'
       >
+        {loading && (
+          <div className="absolute flex w-full md:w-[500px] justify-center items-center bg-inherit">
+            <FaSpinner className="text-xl opacity-80 transition-all animate-spin" />
+          </div>
+        )}
         <Image
           src={items[selected]}
           alt="My wedding image"
-          priority
+          loading='lazy'
+          onLoad={(e) => {
+            setLoading(false);
+          }}
           className="h-fit sm:h-full w-full rounded-lg transition
           duration-300 ease-in-out object-contain object-center
           hover:cursor-pointer bg-transparent"

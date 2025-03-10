@@ -33,7 +33,7 @@ export const links = [
 // 40 - full
 export const fullAlbum = [
   {
-    src: 'https://i.imgur.com/DCBIBSM.jpeg',
+    src: 'https://i.imgur.com/DCBIBSM.jpeg', // 1
     height: 2336,
     width: 3504,
     horizontal: true,
@@ -51,7 +51,7 @@ export const fullAlbum = [
     horizontal: false,
   },
   {
-    src: 'https://i.imgur.com/oWJ1zoL.jpeg',
+    src: 'https://i.imgur.com/oWJ1zoL.jpeg', // 2
     height: 2336,
     width: 3504,
     horizontal: true,
@@ -99,13 +99,13 @@ export const fullAlbum = [
     horizontal: false,
   },
   {
-    src: 'https://i.imgur.com/b29AjZ3.jpeg',
+    src: 'https://i.imgur.com/b29AjZ3.jpeg', // 3
     height: 2336,
     width: 3504,
     horizontal: true,
   },
   {
-    src: 'https://i.imgur.com/4huKOjj.jpeg',
+    src: 'https://i.imgur.com/4huKOjj.jpeg', // 4
     height: 2336,
     width: 3504,
     horizontal: true,
@@ -255,13 +255,13 @@ export const fullAlbum = [
     horizontal: false,
   },
   {
-    src: 'https://i.imgur.com/kBFGjoi.jpeg',
+    src: 'https://i.imgur.com/kBFGjoi.jpeg', // 5
     height: 2336,
     width: 3504,
     horizontal: true,
   },
   {
-    src: 'https://i.imgur.com/i5xjO2B.jpeg',
+    src: 'https://i.imgur.com/i5xjO2B.jpeg', // 6
     height: 2336,
     width: 3504,
     horizontal: true,
@@ -277,112 +277,111 @@ export const fullAlbum = [
 // 20 - images
 export const albumUrls = [
   {
-    src: '/images/HR302088.jpg', // Col - 1
-    height: 7612,
-    width: 5077,
-    horizontal: false,
-  },
-  {
-    src: '/images/HR302900.jpg', // Col - 2
-    height: 4000,
-    width: 6000,
-    horizontal: true,
-  },
-  {
-    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    src: 'https://i.imgur.com/oDRYzFo.jpeg', // Col - 1
     height: 3504,
     width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302900.jpg', // Col - 1
-    height: 4000,
-    width: 6000,
+    src: 'https://i.imgur.com/DCBIBSM.jpeg', // Col - 2
+    height: 2336,
+    width: 3504,
     horizontal: true,
   },
   {
-    src: '/images/HR302088.jpg', // Col - 2
-    height: 7612,
-    width: 5077,
-    horizontal: false,
-  },
-  {
-    src: '/images/HR302088.jpg', // Col - 3
-    height: 7612,
-    width: 5077,
-    horizontal: false,
-  },
-  {
-    src: '/images/HR302088.jpg', // Col - 1
-    height: 7612,
-    width: 5077,
-    horizontal: false,
-  },
-  {
-    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    src: 'https://i.imgur.com/jU1V31j.jpeg', // Col - 3
     height: 3504,
     width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302900.jpg', // Col - 3
-    height: 4000,
-    width: 6000,
-    horizontal: true,
-  },
-
-  {
-    src: '/images/HR302900.jpg', // Col - 1
-    height: 4000,
-    width: 6000,
+    src: 'https://i.imgur.com/oWJ1zoL.jpeg', // Col - 1
+    height: 2336,
+    width: 3504,
     horizontal: true,
   },
   {
-    src: '/images/HR302088.jpg', // Col - 2
-    height: 7612,
-    width: 5077,
-    horizontal: false,
-  },
-  {
-    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    src: 'https://i.imgur.com/IeaGesZ.jpeg', // Col - 2
     height: 3504,
     width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302088.jpg', // Col - 1
-    height: 7612,
-    width: 5077,
+    src: 'https://i.imgur.com/K2J6ssK.jpeg', // Col - 3
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302088.jpg', // Col - 2
-    height: 7612,
-    width: 5077,
+    src: 'https://i.imgur.com/ppOxYvc.jpeg', // Col - 1
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302900.jpg', // Col - 3
-    height: 4000,
-    width: 6000,
+    src: 'https://i.imgur.com/hfeVMI8.jpeg', // Col - 3
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/b29AjZ3.jpeg', // Col - 3
+    height: 2336,
+    width: 3504,
     horizontal: true,
   },
   {
-    src: '/images/HR302088.jpg', // Col - 1
-    height: 7612,
-    width: 5077,
-    horizontal: false,
-  },
-  {
-    src: '/images/HR302900.jpg', // Col - 2
-    height: 4000,
-    width: 6000,
+    src: 'https://i.imgur.com/4huKOjj.jpeg', // Col - 1
+    height: 2336,
+    width: 3504,
     horizontal: true,
   },
   {
-    src: '/images/HR302900.jpg', // Col - 2
-    height: 4000,
-    width: 6000,
+    src: 'https://i.imgur.com/peZGbgk.jpeg', // Col - 2
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/wK9KuCA.jpeg', // Col - 3
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/4F0YkmH.jpeg', // Col - 1
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/2cLvLgO.jpeg', // Col - 2
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/kBFGjoi.jpeg', // Col - 3
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/ITIrfUC.jpeg', // Col - 1
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/i5xjO2B.jpeg', // Col - 2
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/e3ZtXJB.jpeg', // Col - 3
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
 ] as Array<AlbumImage>;
@@ -390,75 +389,75 @@ export const albumUrls = [
 // 12 - images
 export const albumUrlsSm = [
   {
-    src: '/images/HR302088.jpg', // Col - 1
-    height: 7612,
-    width: 5077,
-    horizontal: false,
-  },
-  {
-    src: '/images/HR302900.jpg', // Col - 2
-    height: 4000,
-    width: 6000,
-    horizontal: true,
-  },
-  {
-    src: '/images/HR302900.jpg', // Col - 1
-    height: 4000,
-    width: 6000,
-    horizontal: true,
-  },
-  {
-    src: 'https://i.imgur.com/e3ZtXJB.jpeg',
+    src: 'https://i.imgur.com/oDRYzFo.jpeg', // Col - 1
     height: 3504,
     width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302088.jpg', // Col - 1
-    height: 7612,
-    width: 5077,
+    src: 'https://i.imgur.com/DCBIBSM.jpeg', // Col - 2
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/oWJ1zoL.jpeg', // Col - 1
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/jU1V31j.jpeg', // Col - 2
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302900.jpg', // Col - 2
-    height: 4000,
-    width: 6000,
-    horizontal: true,
-  },
-  {
-    src: '/images/HR302900.jpg', // Col - 1
-    height: 4000,
-    width: 6000,
-    horizontal: true,
-  },
-  {
-    src: '/images/HR302088.jpg', // Col - 2
-    height: 7612,
-    width: 5077,
+    src: 'https://i.imgur.com/IeaGesZ.jpeg', // Col - 2
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302088.jpg', // Col - 1
-    height: 7612,
-    width: 5077,
+    src: 'https://i.imgur.com/b29AjZ3.jpeg', // Col - 2
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/kBFGjoi.jpeg', // Col - 1
+    height: 2336,
+    width: 3504,
+    horizontal: true,
+  },
+  {
+    src: 'https://i.imgur.com/ITIrfUC.jpeg', // Col - 2
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
   {
-    src: '/images/HR302900.jpg', // Col - 1
-    height: 4000,
-    width: 6000,
+    src: 'https://i.imgur.com/peZGbgk.jpeg', // Col - 1
+    height: 3504,
+    width: 2336,
+    horizontal: false,
+  },
+  {
+    src: 'https://i.imgur.com/4huKOjj.jpeg', // Col - 2
+    height: 2336,
+    width: 3504,
     horizontal: true,
   },
   {
-    src: '/images/HR302900.jpg', // Col - 2
-    height: 4000,
-    width: 6000,
+    src: 'https://i.imgur.com/i5xjO2B.jpeg', // Col - 1
+    height: 2336,
+    width: 3504,
     horizontal: true,
   },
   {
-    src: '/images/HR302088.jpg', // Col - 2
-    height: 7612,
-    width: 5077,
+    src: 'https://i.imgur.com/wK9KuCA.jpeg', // Col - 2
+    height: 3504,
+    width: 2336,
     horizontal: false,
   },
 ] as Array<AlbumImage>;

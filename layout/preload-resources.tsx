@@ -14,19 +14,13 @@ export function PreloadResources() {
     fetchPriority: 'auto',
   });
 
-  const preloadExternalImages = () => {
-    return fullAlbum.map((s, index) => (
-      <Image
-        src={s}
-        alt="My wedding image"
-        priority
-        hidden
-        key={index}
-      />
-    ))
-  }
+  fullAlbum.forEach((s, index) => {
+    const imgUrl = encodeURIComponent(s.src);
+    ReactDOM.preload(s.src, {
+      as: 'image',
+      imageSrcSet: `/_next/image?url=${imgUrl}&w=${s.width}&q=25`
+    })
+  })
 
-  return <div className='hidden'>
-    {preloadExternalImages()}
-  </div>;
+  return null;
 }

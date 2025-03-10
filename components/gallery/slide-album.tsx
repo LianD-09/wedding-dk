@@ -33,7 +33,7 @@ class SlideAlbum extends React.Component<Props> {
     this.nextImage = setInterval(() => {
       const nextIndex = (this.props.selected + 1) % this.props.items.length;
       this.props.onSelect(nextIndex);
-    }, 5000);
+    }, 10000);
   }
 
   componentDidUpdate(): void {
@@ -63,7 +63,7 @@ class SlideAlbum extends React.Component<Props> {
       this.nextImage = setInterval(() => {
         const nextIndex = (nextProps.selected + 1) % this.props.items.length;
         this.props.onSelect(nextIndex);
-      }, 5000);
+      }, 10000);
 
       return true;
     }
@@ -91,7 +91,7 @@ class SlideAlbum extends React.Component<Props> {
                 }}
                 src={s}
                 alt=""
-                priority
+                quality={25}
                 className={`h-full w-fit object-center object-cover rounded-md lg:rounded-2xl
                             transition-all duration-500 ${index === this.props.selected
                     ? 'opacity-100 scale-105'
