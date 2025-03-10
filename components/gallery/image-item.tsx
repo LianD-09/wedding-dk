@@ -43,7 +43,7 @@ export default function ImageItem({ imgProps, alt, horizontal }: ImageItemProps)
       >
         <div
           className={`flex relative justify-center items-center p-0 
-            ${imgProps.width > imgProps.height ? 'w-[70vw]' : 'sm:h-[80vh] h-[60vh]'}`}
+            ${imgProps.width > imgProps.height ? 'w-[70vw] h-full' : 'md:h-[80vh] h-[50vh] w-full'}`}
         >
           <Image
             src={imgProps}

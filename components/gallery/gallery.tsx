@@ -25,7 +25,7 @@ export default function Gallery() {
         open={open}
         fullScreen
         onClose={() => setOpen(false)}
-        classNameContainer="!bg-black"
+        classNameContainer="!bg-black md:pb-0"
         onKeyDown={(event) => event.key === 'Escape' && setOpen(false)}
       >
         <AllAlbum />

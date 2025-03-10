@@ -74,11 +74,11 @@ class SlideAlbum extends React.Component<Props> {
 
   render(): React.ReactNode {
     return (
-      <div className="group overflow-hidden relative rounded-md lg:rounded-2xl bg-white">
+      <div className="group overflow-hidden relative rounded-md lg:rounded-2xl bg-white min-h-fit">
         <div
           id="album-wrapper"
           autoFocus
-          className={`flex flex-row transition-all duration-200 overflow-x-auto overflow-y-hidden snap-x`}
+          className={`flex flex-row transition-all duration-200 overflow-x-auto overflow-y-hidden snap-x min-h-fit`}
         >
           {this.props.items.map((s, index) => (
             <div

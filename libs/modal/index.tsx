@@ -72,9 +72,8 @@ export default function Modal({
         onClick={onClose}
       ></div>
       <div
-        className={`bg-white rounded-lg z-10 relative ${
-          fullScreen ? `w-screen h-screen` : ''
-        } ${classNameContainer}`}
+        className={`bg-white rounded-lg z-10 relative ${fullScreen ? `w-screen h-screen` : ''
+          } ${classNameContainer}`}
       >
         <div className={`relative flex justify-center ${classNameHeader}`}>
           {title && (
@@ -87,19 +86,17 @@ export default function Modal({
           )}
           <button
             onClick={onClose}
-            className={`absolute right-2 top-2 rounded-full  ${
-              title
-                ? 'bg-none text-white hover:bg-gray-100 hover:text-black'
-                : 'bg-white text-black hover:bg-gray-300'
-            }`}
+            className={`absolute right-2 top-2 rounded-full  ${title
+              ? 'bg-none text-white hover:bg-gray-100 hover:text-black'
+              : 'bg-white text-black hover:bg-gray-300'
+              } z-50`}
           >
             <BsX className="h-6 w-6" />
           </button>
         </div>
         <div
-          className={`md:px-16 xs:px-4 md:py-10 pb-5 ${
-            title ? 'xs:pt-2' : 'xs:pt-7'
-          } ${classNameChildren} h-full`}
+          className={`md:px-16 xs:px-4 md:py-10 pb-5 ${title ? 'xs:pt-2' : 'xs:pt-7'
+            } ${classNameChildren} h-full`}
         >
           {children}
         </div>
