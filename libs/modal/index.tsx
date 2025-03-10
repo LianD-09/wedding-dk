@@ -28,7 +28,7 @@ export default function Modal({
   title,
   fullScreen,
   classNameContainer = '',
-  onKeyDown
+  onKeyDown,
 }: ModalProps) {
   const { isBelowSm } = useWindowSize();
   useEffect(() => {
@@ -36,8 +36,8 @@ export default function Modal({
       onKeyDown && onKeyDown(event);
     };
 
-    open && window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
+    open && window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
   }, [open]);
 
   useEffect(() => {
@@ -48,13 +48,13 @@ export default function Modal({
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden"; // Disable scrolling
+      document.body.style.overflow = 'hidden'; // Disable scrolling
     } else {
-      document.body.style.overflow = "auto"; // Re-enable scrolling
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
     }
 
     return () => {
-      document.body.style.overflow = "auto"; // Cleanup on unmount
+      document.body.style.overflow = 'auto'; // Cleanup on unmount
     };
   }, [open]);
 
@@ -71,29 +71,35 @@ export default function Modal({
         className="fixed inset-0 bg-black opacity-50"
         onClick={onClose}
       ></div>
-      <div className={`bg-white rounded-lg z-10 relative ${fullScreen ? `w-screen h-screen` : ''} ${classNameContainer}`}>
+      <div
+        className={`bg-white rounded-lg z-10 relative ${
+          fullScreen ? `w-screen h-screen` : ''
+        } ${classNameContainer}`}
+      >
         <div className={`relative flex justify-center ${classNameHeader}`}>
           {title && (
             <Typography
               variant="desc"
-              className={`font-semibold !text-xl ${classNameTitle}`}
+              className={`font-semibold !text-2xl ${classNameTitle} font-playfair`}
             >
               {title}
             </Typography>
           )}
           <button
             onClick={onClose}
-            className={`absolute right-2 top-2 rounded-full  ${title
-              ? 'bg-none text-white hover:bg-gray-100 hover:text-black'
-              : 'bg-white text-black hover:bg-gray-300'
-              }`}
+            className={`absolute right-2 top-2 rounded-full  ${
+              title
+                ? 'bg-none text-white hover:bg-gray-100 hover:text-black'
+                : 'bg-white text-black hover:bg-gray-300'
+            }`}
           >
             <BsX className="h-6 w-6" />
           </button>
         </div>
         <div
-          className={`md:px-16 xs:px-4 md:py-10 pb-5 ${title ? 'xs:pt-2' : 'xs:pt-7'
-            } ${classNameChildren} h-full`}
+          className={`md:px-16 xs:px-4 md:py-10 pb-5 ${
+            title ? 'xs:pt-2' : 'xs:pt-7'
+          } ${classNameChildren} h-full`}
         >
           {children}
         </div>

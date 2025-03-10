@@ -10,9 +10,7 @@ export default function Wishes() {
   const { ref } = useSectionInView({ sectionName: 'Lời chúc' });
   return (
     <section ref={ref} className="max-w-[100rem] text-center mt-10" id="wishes">
-      <SectionHeading className="mt-10 md:mt-20">
-        Gửi Lời Yêu Thương
-      </SectionHeading>
+      <SectionHeading className="mt-10 md:mt-20">Gửi Lời Chúc</SectionHeading>
       <div
         className="flex gap-2 justify-center
       sm:items-stretch sm:flex-col 

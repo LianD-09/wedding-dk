@@ -1,5 +1,6 @@
 'use client';
 import { useSectionInView } from '@/hooks/hooks';
+import Divider from '@/layout/divider';
 import { SectionHeading } from '@/layout/section-heading';
 import Typography from '@/libs/Typography';
 import React from 'react';
@@ -13,10 +14,13 @@ export default function Congrats() {
       id="congrats"
     >
       <SectionHeading className="mt-10">Lời Cảm Ơn</SectionHeading>
-      <Typography variant="desc" className="p-6">
-        Cái này cần anh Dũng chị Khánh nghĩ nhéeeeee
-      </Typography>
-      <p>💚💚💚💚</p>
+      <div className="flex flex-col items-center gap-0 mt-10">
+        <Typography variant="desc">
+          Thật sự hạnh phúc và vinh dự khi nhận được tình cảm và sự có mặt của
+          mọi người trong ngày vui của hai gia đình!
+        </Typography>
+        <Divider className="h-[2px] w-20 bg-khaki" />
+      </div>
     </section>
   );
 }
