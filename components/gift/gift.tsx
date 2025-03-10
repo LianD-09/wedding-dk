@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import giftImg from '@/public/gift.jpg';
+import iconImg from '@/app/icon.jpg';
 import Modal from '@/libs/modal';
 import { banks } from '@/utils/data';
 import GiftCard from './gift-card';
@@ -30,7 +30,7 @@ export default function Gift() {
             className="hover:cursor-pointer transition-all animate-[gift_2s_linear_infinite]"
             onClick={openModalWeddingGift}
           >
-            <Image alt="gift" src={giftImg} className="w-20 h-20 rounded-xl" />
+            <Image alt="gift" src={iconImg} className="w-20 h-20 rounded-xl" />
           </button>
         </div>
         <Modal
@@ -38,7 +38,7 @@ export default function Gift() {
           onClose={closeModalWeddingGift}
           classNameChildren="!px-5"
           title="Hộp quà cưới"
-          classNameTitle="text-white py-2"
+          classNameTitle="text-black py-2"
           classNameHeader="bg-title rounded-t-md"
         >
           <div className="flex md:flex-row xs:flex-col justify-center items-center gap-2 w-full p-2">

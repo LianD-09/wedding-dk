@@ -52,11 +52,11 @@ const config: Config = {
           '100%': { transform: 'scale(.8)' },
         },
         gift: {
-          '0%': { transform: 'scale(.8) rotate(0)' },
-          '25%': { transform: 'scale(1.0) rotate(13deg)' },
-          '50%': { transform: 'scale(1.2) rotate(26deg)' },
-          '75%': { transform: 'scale(1.0) rotate(13deg)' },
-          '100%': { transform: 'scale(.8) rotate(0)' },
+          '0%': { transform: 'scale(.8) rotate(-15deg)' },
+          '25%': { transform: 'scale(1.0) rotate(0deg)' },
+          '50%': { transform: 'scale(1.2) rotate(15deg)' },
+          '75%': { transform: 'scale(1.0) rotate(0deg)' },
+          '100%': { transform: 'scale(.8) rotate(-15deg)' },
         },
         scaleUp: {
           '0%': { transform: 'scale(1.0)' },
@@ -68,7 +68,7 @@ const config: Config = {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
-        }
+        },
       },
     },
   },
