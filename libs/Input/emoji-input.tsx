@@ -87,9 +87,8 @@ const EmojiInput = forwardRef<HTMLTextAreaElement, EmojiInputProps>(
     return (
       <div className="relative w-full">
         <div
-          className={`flex ${
-            focus ? 'border-khaki border-2' : ''
-          } flex-col overflow-hidden border bg-white`}
+          className={`flex ${focus ? 'border-khaki border-2' : ''
+            } flex-col overflow-hidden border bg-white`}
         >
           <textarea
             ref={handleRef}
@@ -104,6 +103,7 @@ const EmojiInput = forwardRef<HTMLTextAreaElement, EmojiInputProps>(
             onBlur={onBlur}
             rows={rows}
             {...rest}
+            required
           />
           <div className="flex justify-end border-none border-gray-100">
             <button

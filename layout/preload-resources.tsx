@@ -1,5 +1,5 @@
 import { fullAlbum } from '@/utils/data';
-import Image from 'next/image';
+import { imageLoader } from '@/utils/utils';
 import ReactDOM from 'react-dom';
 
 // preload images
@@ -15,10 +15,8 @@ export function PreloadResources() {
   });
 
   fullAlbum.forEach((s, index) => {
-    const imgUrl = encodeURIComponent(s.src);
-    ReactDOM.preload(s.src, {
+    ReactDOM.preload(imageLoader(s), {
       as: 'image',
-      imageSrcSet: `/_next/image?url=${imgUrl}&w=${s.width}&q=25`
     })
   })
 

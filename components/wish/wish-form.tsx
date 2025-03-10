@@ -83,8 +83,8 @@ export default function WishForm() {
           name="author"
           value={formData.author}
           onChange={handleChangeAuthorInput}
-          placeholder="Nhập tên của bạn *"
-          className="md:h-[3.5rem] xs:h-[3rem] border px-3 bg-white text-khaki focus:outline-none focus:ring-0 focus:border-khaki focus:border-2 rounded-none"
+          placeholder="Nhập tên của bạn"
+          className="md:h-[3.5rem] xs:h-[3rem] caret-khaki border px-3 bg-white text-black focus:outline-none focus:ring-0 focus:border-khaki focus:border-2 rounded-none"
           required
         />
         <EmojiInput
@@ -93,7 +93,7 @@ export default function WishForm() {
           value={formData.message}
           onChange={handleChangeMessageInput}
           placeholder="Nhập lời nhắn của bạn..."
-          className="border bg-white rounded-none text-khaki caret-khaki"
+          className="border bg-white rounded-none text-black caret-khaki"
         />
         <div className="flex justify-center items-center mt-2">
           <Button

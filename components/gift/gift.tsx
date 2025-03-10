@@ -17,17 +17,17 @@ export default function Gift() {
     setIsModalWeddingGiftOpen(false);
   };
   return (
-    <section className="mb-20">
+    <section className="mt-10 md:mt-20 mb-20">
       <div className="flex justify-center items-center">
         <div className="flex justify-center items-center flex-col gap-3">
           <Typography
             variant="h4"
-            className="!text-khaki md:!text-2xl xs:!text-xl"
+            className="!text-khaki md:!text-2xl xs:!text-base px-5 text-center"
           >
             Gửi quà cho cô dâu ❤️ chú rể ở đây nhé!
           </Typography>
           <button
-            className="hover:cursor-pointer transition-all animate-[gift_2s_linear_infinite]"
+            className="hover:cursor-pointer transition-all animate-[gift_2s_linear_infinite] focus:ring-0 focus:outline-none"
             onClick={openModalWeddingGift}
           >
             <Image alt="gift" src={iconImg} className="w-20 h-20 rounded-xl" />
@@ -36,12 +36,10 @@ export default function Gift() {
         <Modal
           open={isModalWeddingGiftOpen}
           onClose={closeModalWeddingGift}
-          classNameChildren="!px-5"
-          title="Hộp quà cưới"
-          classNameTitle="text-black py-2"
-          classNameHeader="bg-title rounded-t-md"
+          classNameTitle="text-black"
+          classNameHeader="!absolute !-top-5 !-right-5 !h-6 !w-6 !z-50"
         >
-          <div className="flex md:flex-row xs:flex-col justify-center items-center gap-2 w-full p-2">
+          <div className="flex md:flex-row xs:flex-col justify-center items-center gap-5 w-full">
             {banks.map((bank, index) => (
               <React.Fragment key={index}>
                 <GiftCard

@@ -1,6 +1,7 @@
 'use client';
 
 import { useWindowSize } from '@/hooks/useWindowSize';
+import { imageLoader } from '@/utils/utils';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import React from 'react';
@@ -77,18 +78,19 @@ class SlideAlbum extends React.Component<Props> {
         <div
           id="album-wrapper"
           autoFocus
-          className={`flex flex-row transition-all duration-200 overflow-x-auto overflow-y-hidden snap-x `}
+          className={`flex flex-row transition-all duration-200 overflow-x-auto overflow-y-hidden snap-x`}
         >
           {this.props.items.map((s, index) => (
             <div
               id={`item-${index}`}
               key={index}
-              className={`snap-center min-w-[20%] sm:max-w-[10%] sm:min-w-[10%] md:max-w-[8%] md:min-w-[8%] lg px-3 flex justify-center items-center py-2`}
+              className={`snap-center min-w-[20%] md:max-w-[8%] md:min-w-[8%] lg:px-3 px-1 flex justify-center items-center py-2 gap-5`}
             >
               <Image
                 onClick={() => {
                   this.selectImage(index);
                 }}
+                loader={imageLoader}
                 src={s}
                 alt=""
                 quality={25}

@@ -7,7 +7,7 @@ export type PartyItemProps = {
   date: string;
   address: string;
   location: string;
-  image?: StaticImageData;
+  image: StaticImageData;
 };
 
 export interface ShapeProps {

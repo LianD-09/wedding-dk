@@ -125,10 +125,11 @@ export default function Parties() {
           >
             <div className="hidden md:flex overflow-hidden shadow-xl border-[2rem] border-white z-10">
               <Image
-                src={party.house === 'NHÀ TRAI' ? groomParty : brideParty}
-                height={6509 / 10}
-                width={4342 / 10}
+                src={party.image}
                 alt="Wedding couple"
+                width={party.image.width / 6}
+                height={party.image.height / 6}
+                quality={50}
                 className=""
                 priority
               />

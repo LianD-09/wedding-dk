@@ -30,7 +30,7 @@ export default function Gallery() {
       >
         <AllAlbum />
       </Modal>
-      <div className="w-screen flex justify-center items-center py-10 md:p-40 sm:p-10">
+      <div className="w-screen flex justify-center items-center py-10 md:p-40 sm:p-10 p-5">
         <iframe
           src="https://www.youtube.com/embed/By6RJgfwzcY"
           allowFullScreen
