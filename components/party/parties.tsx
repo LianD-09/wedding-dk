@@ -14,8 +14,6 @@ import Modal from '@/libs/modal';
 import Image from 'next/image';
 import RadioButton from '@/libs/radio-button';
 import { appendRowData, getIDs } from '@/services/spreadsheets';
-import groomParty from '@/public/images/groom-party.jpeg';
-import brideParty from '@/public/images/bride-party.jpeg';
 import { Triangle } from '@/libs/Shape';
 
 enum GUEST {
