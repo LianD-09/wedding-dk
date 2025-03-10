@@ -82,17 +82,20 @@ const EmojiInput = forwardRef<HTMLTextAreaElement, EmojiInputProps>(
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }, []);
+    const [focus, setFocus] = useState(false);
 
     return (
       <div className="relative w-full">
         <div
-          className={`flex flex-col overflow-hidden border bg-white ${
-            error ? 'border-red-500' : 'border-gray-300'
-          }`}
+          className={`flex ${
+            focus ? 'border-khaki border-2' : ''
+          } flex-col overflow-hidden border bg-white`}
         >
           <textarea
             ref={handleRef}
             value={value}
+            onFocus={() => setFocus(true)}
+            onBlurCapture={() => setFocus(false)}
             onChange={(e) => onChange(e.target.value)}
             className={`w-full p-3 outline-none caret-khaki border-none resize-none ${className} `}
             placeholder={placeholder}

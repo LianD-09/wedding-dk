@@ -175,7 +175,7 @@ export default function Parties() {
           </Typography>
           <input
             placeholder="Nhập tên của bạn"
-            className="text-khaki text-center md:h-14 xs:h-10 border-b px-3 bg-white focus:outline-none rounded-none caret-khaki"
+            className="text-khaki text-center md:h-14 xs:h-10 border-b px-3 bg-white focus:outline-none focus:ring-0 focus:border-b-khaki focus:border-b-2 rounded-none caret-khaki"
             required
             id="guestName"
             value={guestName}
@@ -195,7 +195,7 @@ export default function Parties() {
           </div>
           <input
             placeholder="Bạn sẽ tham dự đám cưới của chúng mình chứ?"
-            className="text-khaki text-center md:h-14 xs:h-10 border-b px-3 bg-white focus:outline-none caret-khaki rounded-none"
+            className="text-khaki text-center md:h-14 xs:h-10 border-b px-3 bg-white focus:outline-none focus:ring-0 focus:border-b-khaki focus:border-b-2 caret-khaki rounded-none"
             required
             value={confirmInfo}
             onChange={handleConfirmInfoChange}

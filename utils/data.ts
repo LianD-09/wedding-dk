@@ -484,8 +484,8 @@ export const couple = {
       width: 6000,
     } as StaticImageData,
     description: 'Cái này phải để anh Dũng nghĩ thôi ạ 😁',
-    facebook: '',
-    instagram: '',
+    facebook: 'https://www.facebook.com/mai.tiendung.10',
+    instagram: 'https://www.instagram.com/ha.chul/',
   },
   bride: {
     name: 'Ngọc Khánh',
@@ -495,8 +495,8 @@ export const couple = {
       width: 6000,
     } as StaticImageData,
     description: 'Cô dâu cũng phải nghĩ nha ạ 😍',
-    facebook: '',
-    instagram: '',
+    facebook: 'https://www.facebook.com/dhngockhanh',
+    instagram: 'https://www.instagram.com/cokhabox_/',
   },
 };
 

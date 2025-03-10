@@ -30,6 +30,14 @@ export default function Gallery() {
       >
         <AllAlbum />
       </Modal>
+      <div className="w-screen flex justify-center items-center py-10 md:p-40 sm:p-10">
+        <iframe
+          src="https://www.youtube.com/embed/By6RJgfwzcY"
+          allowFullScreen
+          loading="lazy"
+          className="w-screen aspect-video"
+        />
+      </div>
     </section>
   );
 }

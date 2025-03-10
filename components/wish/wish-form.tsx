@@ -63,7 +63,7 @@ export default function WishForm() {
   return (
     <div
       className="flex items-center bg-white text-center flex-col mt-2 md:mt-10  w-full
-    border-dashed border-[2px] border-secondary-cl p-4 rounded-md md:h-[480px] xs:h-[400px]"
+    border-dashed border-[2px] border-khaki p-4 md:h-fit xs:h-fit"
     >
       <Typography className="font-semibold" variant="desc">
         Cảm ơn bạn rất nhiều vì đã gửi những lời chúc tốt đẹp nhất đến đám cưới
@@ -84,7 +84,7 @@ export default function WishForm() {
           value={formData.author}
           onChange={handleChangeAuthorInput}
           placeholder="Nhập tên của bạn *"
-          className="md:h-[3.5rem] xs:h-[3rem] border px-3 bg-white text-khaki focus:outline-none rounded-none"
+          className="md:h-[3.5rem] xs:h-[3rem] border px-3 bg-white text-khaki focus:outline-none focus:ring-0 focus:border-khaki focus:border-2 rounded-none"
           required
         />
         <EmojiInput
@@ -93,9 +93,9 @@ export default function WishForm() {
           value={formData.message}
           onChange={handleChangeMessageInput}
           placeholder="Nhập lời nhắn của bạn..."
-          className="border bg-white focus:outline-none rounded-none text-khaki caret-khaki"
+          className="border bg-white rounded-none text-khaki caret-khaki"
         />
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mt-2">
           <Button
             type="submit"
             endIcon={isLoading ? loadingIcon : originalIcon}
