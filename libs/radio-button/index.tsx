@@ -15,7 +15,7 @@ export default function RadioButton({
     <label className="flex items-center cursor-pointer">
       <input
         type="radio"
-        className="form-radio text-secondary-cl h-5 w-5"
+        className="form-radio text-khaki h-5 w-5 border-khaki focus:ring-khaki"
         checked={checked}
         onChange={onChange}
       />

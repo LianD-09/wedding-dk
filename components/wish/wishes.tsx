@@ -17,10 +17,10 @@ export default function Wishes() {
       xs:items-center xs:flex-col 
       md:items-stretch  md:flex-row"
       >
-        <div className="xs:px-5 md:w-1/2">
+        <div className="xs:px-5 md:w-1/2 h-full">
           <WishForm />
         </div>
-        <div className="xs:w-full xs:px-5 md:w-1/2">
+        <div className="xs:w-full xs:px-5 md:w-1/2 h-full">
           <WishList />
         </div>
       </div>

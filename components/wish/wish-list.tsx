@@ -20,8 +20,8 @@ export default function WishList() {
   }, [comments, mutate]);
   return (
     <div
-      className={`flex bg-white flex-col md:mt-10 xs:mt-1 border-[3px] w-full
-      border-secondary-cl rounded-md gap-2 md:h-[480px] xs:h-[400px] overflow-auto ${
+      className={`flex bg-white flex-col md:mt-10 xs:mt-1 border-2 w-full border-khaki
+      gap-2 md:h-full h-full overflow-auto ${
         comments?.length ? '' : ' justify-center items-center align-middle'
       }'}`}
     >
