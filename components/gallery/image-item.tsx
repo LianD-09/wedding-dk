@@ -42,14 +42,15 @@ export default function ImageItem({ imgProps, alt, horizontal }: ImageItemProps)
         onKeyDown={(e) => e.key === 'Escape' && closeModal()}
       >
         <div
-          className={`flex relative justify-center items-center p-0 
-            ${imgProps.width > imgProps.height ? 'w-[85dvw] h-full' : 'md:h-[80vh] h-[60dvh] w-full'}`}
+          className={`flex relative justify-center items-center p-0`}
         >
           <Image
             src={imgProps}
             alt={alt}
             priority
-            className="object-cover object-center rounded-lg h-full w-full"
+            className={`object-cover object-center rounded-lg
+              ${imgProps.width > imgProps.height ? 'w-[85dvw] h-fit' : 'md:h-[80vh] h-[70dvh] w-fit'}
+              `}
           />
         </div>
       </Modal>
