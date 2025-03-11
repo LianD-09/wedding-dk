@@ -19,7 +19,7 @@ export default function Congrats() {
       <SectionHeading className="mt-10 !text-white md:!text-8xl !font-bold">THANK YOU</SectionHeading>
       <div className="flex flex-col items-center gap-0 mt-10">
         <Typography variant="desc" className='text-white'>
-          Dũng và Khánh xin gửi lời cảm ơn sâu sắc đến gia đình, bạn bè, đồng nghiệp và những người thân yêu đã luôn đồng hành, sẻ chia và yêu thương trong suốt hành trình trưởng thành của cả hai. Sự hiện diện và lời chúc phúc của mọi người chính là niềm vui, là mọn quá quý giá nhất trong ngày trọng đại của chúng mình.
+          Dũng và Khánh xin gửi lời cảm ơn sâu sắc đến gia đình, bạn bè, đồng nghiệp và những người thân yêu đã luôn đồng hành, sẻ chia và yêu thương trong suốt hành trình trưởng thành của cả hai. Sự hiện diện và lời chúc phúc của mọi người chính là niềm vui, là món quà quý giá nhất trong ngày trọng đại của chúng mình.
         </Typography>
         <Divider className="h-[2px] w-1/2 bg-khaki" />
       </div>

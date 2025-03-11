@@ -46,8 +46,8 @@ export default function Carousel({ slides }: Props) {
         className="absolute -top-[20%] right-0 w-1/3 pointer-events-none z-50"
       />
       <SwipeProvider onSwipeLeft={nextSlide} onSwipeRight={previousSlide}>
-        <div className="flex flex-col group overflow-hidden relative w-[inherit] h-full md:px-10 px-5 bg-black md:py-24 py-5 md:gap-20 gap-4 transition-all ease-in-out duration-1000">
-          <Typography className="text-white !font-light italic md:!text-4xl" variant={'desc'}>
+        <div className="flex flex-col group overflow-hidden relative w-[inherit] h-full md:px-10 px-5 bg-black md:py-24 pb-5 pt-10 md:gap-20 gap-4 transition-all ease-in-out duration-1000">
+          <Typography className="text-white !font-light italic md:!text-4xl !text-xl" variant={'desc'}>
             23 . 03 . 2025
           </Typography>
           <Typography className="text-white !font-medium lg:!text-9xl md:!text-7xl !font-windsong" variant={'h1'}>

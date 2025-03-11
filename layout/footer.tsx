@@ -63,19 +63,17 @@ export default function Footer() {
             <Typography
               variant="desc"
               className={`p-3 -ml-12 !font-semibold md:pl-14 w-auto xs:pl-14
-          !text-white ${isClose ? 'animate-slide-in-left' : 'animate-slide-in-right'
-                }
-          bg-tamarillo
-          ${isPause ? 'bg-tamarillo' : 'bg-khaki'} rounded-3xl
-          text-center justify-center items-center flex z-[10] !text-sm
-           `}
+            !text-white ${isClose ? 'animate-slide-in-left' : 'animate-slide-in-right'}
+              ${isPause ? 'bg-tamarillo' : 'bg-khaki'} rounded-3xl
+              text-center justify-center items-center flex z-[10] !text-sm
+            `}
             >
               Bấm vào đây để phát nhạc!
             </Typography>
           )}
           <audio
             controls
-            src="https://res.cloudinary.com/devoro1vn/video/upload/v1698862626/wedding_music.mp3"
+            src="https://res.cloudinary.com/db1pg8ylo/video/upload/v1741667943/zgbrevxo6aranlp1hvjw.mp3"
             autoPlay={!isPause}
             hidden
             className="scale-90 z-[90]"

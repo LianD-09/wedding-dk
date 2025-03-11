@@ -1,5 +1,5 @@
 import { fullAlbum } from '@/utils/data';
-import { imageLoader } from '@/utils/utils';
+import { getImageProps } from 'next/image';
 import ReactDOM from 'react-dom';
 
 // preload images
@@ -15,8 +15,12 @@ export function PreloadResources() {
   });
 
   fullAlbum.forEach((s, index) => {
-    ReactDOM.preload(imageLoader(s), {
+    const { props: transformedProps } = getImageProps({ ...s, alt: '', quality: 25 });
+    ReactDOM.preload(transformedProps.src, {
       as: 'image',
+      imageSrcSet: transformedProps.srcSet,
+      imageSizes: transformedProps.sizes,
+      fetchPriority: transformedProps.fetchPriority,
     })
   })
 

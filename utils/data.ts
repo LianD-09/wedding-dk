@@ -13,12 +13,12 @@ export const links = [
     hash: '#intro',
   },
   {
-    name: 'Tiệc cưới',
-    hash: '#parties',
-  },
-  {
     name: 'Album cưới',
     hash: '#album',
+  },
+  {
+    name: 'Tiệc cưới',
+    hash: '#parties',
   },
   {
     name: 'Lời chúc',

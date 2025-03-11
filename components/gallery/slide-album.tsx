@@ -1,7 +1,6 @@
 'use client';
 
 import { useWindowSize } from '@/hooks/useWindowSize';
-import { imageLoader } from '@/utils/utils';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import React from 'react';
@@ -90,7 +89,6 @@ class SlideAlbum extends React.Component<Props> {
                 onClick={() => {
                   this.selectImage(index);
                 }}
-                loader={imageLoader}
                 src={s}
                 alt=""
                 quality={25}

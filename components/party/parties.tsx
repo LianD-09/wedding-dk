@@ -108,7 +108,7 @@ export default function Parties() {
       <Triangle type="rtt" className="absolute top-0 left-0" />
       <Triangle type="rtb" className="absolute bottom-0 left-0" />
       <SectionHeading className="sm:!mb-2 md:!mb-6 md:mt-40 md:!text-8xl !font-bold text-white">
-        Wedding Parties
+        Wedding Party
       </SectionHeading>
       <div
         className="w-full mt-16 sm:p-10 xs:p-5 md:px-32 lg:px-16 
