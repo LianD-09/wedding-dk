@@ -43,13 +43,13 @@ export default function ImageItem({ imgProps, alt, horizontal }: ImageItemProps)
       >
         <div
           className={`flex relative justify-center items-center p-0 
-            ${imgProps.width > imgProps.height ? 'w-[70vw] h-full' : 'md:h-[80vh] h-[50vh] w-full'}`}
+            ${imgProps.width > imgProps.height ? 'w-[85dvw] h-full' : 'md:h-[80vh] h-[60dvh] w-full'}`}
         >
           <Image
             src={imgProps}
             alt={alt}
             priority
-            className="object-cover object-center rounded-lg w-full h-full"
+            className="object-cover object-center rounded-lg h-full w-full"
           />
         </div>
       </Modal>
