@@ -48,13 +48,13 @@ export default function Modal({
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = 'hidden'; // Disable scrolling
+      document.body.style.overflowY = 'hidden'; // Disable scrolling
     } else {
-      document.body.style.overflow = 'auto'; // Re-enable scrolling
+      document.body.style.overflowY = 'auto'; // Re-enable scrolling
     }
 
     return () => {
-      document.body.style.overflow = 'auto'; // Cleanup on unmount
+      document.body.style.overflowY = 'auto'; // Cleanup on unmount
     };
   }, [open]);
 
