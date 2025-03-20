@@ -20,7 +20,7 @@ export default function WishList() {
   }, [comments, mutate]);
   return (
     <div
-      className={`flex bg-white flex-col md:mt-10 xs:mt-1 border-2 w-full border-khaki
+      className={`flex bg-white flex-col border-2 w-full border-khaki
       gap-2 h-full overflow-auto ${comments?.length ? '' : ' justify-center items-center align-middle'
         }'}`}
     >

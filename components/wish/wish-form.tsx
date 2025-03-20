@@ -62,7 +62,7 @@ export default function WishForm() {
   };
   return (
     <div
-      className="flex items-center bg-white text-center flex-col mt-2 md:mt-10 w-full
+      className="flex items-center bg-white text-center flex-col w-full
     border-dashed border-[2px] border-khaki p-4 h-full"
     >
       <Typography className="font-semibold" variant="desc">
