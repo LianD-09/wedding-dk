@@ -62,8 +62,8 @@ export default function WishForm() {
   };
   return (
     <div
-      className="flex items-center bg-white text-center flex-col mt-2 md:mt-10  w-full
-    border-dashed border-[2px] border-khaki p-4 md:h-fit xs:h-fit"
+      className="flex items-center bg-white text-center flex-col mt-2 md:mt-10 w-full
+    border-dashed border-[2px] border-khaki p-4 h-full"
     >
       <Typography className="font-semibold" variant="desc">
         Cảm ơn bạn rất nhiều vì đã gửi những lời chúc tốt đẹp nhất đến đám cưới
@@ -74,7 +74,7 @@ export default function WishForm() {
         --
       </Typography>
       <form
-        className="flex flex-col md:mt-10 xs:mt-2 w-full p-6 gap-3"
+        className="flex flex-col md:mt-10 xs:mt-2 w-full p-6 gap-3 h-full"
         onSubmit={submitForm}
       >
         <input

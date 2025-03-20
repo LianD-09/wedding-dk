@@ -49,7 +49,7 @@ export default function ImageItem({ imgProps, alt, horizontal }: ImageItemProps)
             alt={alt}
             priority
             className={`object-cover object-center rounded-lg
-              ${imgProps.width > imgProps.height ? 'w-[85dvw] h-fit' : 'md:h-[80vh] h-[70dvh] w-fit'}
+              ${imgProps.width > imgProps.height ? 'w-[90dvw] md:h-[70dvh] md:w-full' : 'md:h-[80vh] h-[70dvh] w-fit'}
               `}
           />
         </div>

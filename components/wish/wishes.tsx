@@ -15,12 +15,12 @@ export default function Wishes() {
         className="flex gap-2 justify-center mt-8
       sm:items-stretch sm:flex-col 
       xs:items-center xs:flex-col 
-      md:items-stretch md:flex-row"
+      md:items-stretch md:flex-row md:h-[50dvh]"
       >
         <div className="xs:px-5 md:w-1/2 h-full">
           <WishForm />
         </div>
-        <div className="xs:w-full xs:px-5 md:w-1/2 h-full">
+        <div className="xs:w-full xs:px-5 md:w-1/2 md:h-full h-[60dvh]">
           <WishList />
         </div>
       </div>
