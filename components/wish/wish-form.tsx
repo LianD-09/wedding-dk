@@ -63,7 +63,7 @@ export default function WishForm() {
   return (
     <div
       className="flex items-center bg-white text-center flex-col w-full
-    border-dashed border-[2px] border-khaki p-4 h-full"
+    border-dashed border-[2px] border-khaki p-4 h-fit"
     >
       <Typography className="font-semibold" variant="desc">
         Cảm ơn bạn rất nhiều vì đã gửi những lời chúc tốt đẹp nhất đến đám cưới
